@@ -1,61 +1,101 @@
-export default function Hero() {
+"use client";
+
+import Image from "next/image";
+import React from "react";
+import Slider from "react-slick";
+
+const Hero = () => {
+  const settings = {
+    dots: false,
+    autoplay: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
-    <section className="relative">
-      {/* Illustration behind hero content */}
-      <div
-        className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none -z-1"
-        aria-hidden="true"
-      >
-        <svg
-          width="1360"
-          height="578"
-          viewBox="0 0 1360 578"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient
-              x1="50%"
-              y1="0%"
-              x2="50%"
-              y2="100%"
-              id="illustration-01"
-            >
-              <stop stopColor="#FFF" offset="0%" />
-              <stop stopColor="#EAEAEA" offset="77.402%" />
-              <stop stopColor="#DFDFDF" offset="100%" />
-            </linearGradient>
-          </defs>
-          <g fill="url(#illustration-01)" fillRule="evenodd">
-            <circle cx="1232" cy="128" r="128" />
-            <circle cx="155" cy="443" r="64" />
-          </g>
-        </svg>
+    <div className="w-[100%] sm:w-[80%] flex flex-col ">
+      <div className="flex justify-between items-center w-full px-4 pb-3 shadow-md">
+        <Image
+          src="/images/logo.png"
+          alt=""
+          width={window.innerWidth < 600 ? 100 : 130}
+          height={40}
+        />
+        <p className="flex-1 text-sm sm:text-xl font-medium font-sans text-center px-10">
+          Looking for a Health Checkup?
+          <br /> We got you Covered
+        </p>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-          <div className="text-center pb-12 md:pb-16">
-            <h1
-              className="text-3xl sm:text-5xl font-extrabold leading-tighter tracking-tighter mb-4"
-              data-aos="zoom-y-out"
-            >
-              Your Health is our,{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-                Priority
-              </span>
-            </h1>
-            <div className="max-w-3xl mx-auto">
-              <p
-                className="text-xl text-gray-600 mb-8"
-                data-aos="zoom-y-out"
-                data-aos-delay="150"
-              >
-                Book the full body health Check-up Today.
-              </p>
-            </div>
-          </div>
+      <div className="w-full overflow-hidden p-3">
+        <Slider {...settings}>
+          <Image src="/images/banner.jpg" alt="" width={100} height={10} />
+          <Image src="/images/banner1.jpg" alt="" width={100} height={10} />
+          <Image src="/images/banner.jpg" alt="" width={100} height={10} />
+        </Slider>
+      </div>
+
+      <div className="w-full grid gap-3 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none p-3 sm:p-5">
+        {/* 1st item */}
+        <div className="relative flex flex-col items-center p-2 sm:p-6 bg-white rounded shadow-xl">
+          <Image
+            src={"/images/delivery.png"}
+            className="p-1 -mt-1 mb-2"
+            alt=""
+            width={window.innerWidth < 600 ? 40 : 60}
+            height={window.innerWidth < 600 ? 40 : 60}
+          />
+          <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
+            Free Home Sample Collection
+          </h4>
+        </div>
+
+        {/* 2nd item */}
+        <div className="relative flex flex-col items-center p-3 sm:p-6 bg-white rounded shadow-xl">
+          <Image
+            src={"/images/discount.png"}
+            className="p-1 -mt-1 mb-2"
+            alt=""
+            width={window.innerWidth < 600 ? 40 : 60}
+            height={window.innerWidth < 600 ? 40 : 60}
+          />
+          <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
+            Up to 60% Discount on all test
+          </h4>
+        </div>
+
+        {/* 3rd item */}
+        <div className="relative flex flex-col items-center p-3 sm:p-6 bg-white rounded shadow-xl">
+          <Image
+            src={"/images/test.png"}
+            className="p-1 -mt-1 mb-2"
+            alt=""
+            width={window.innerWidth < 600 ? 40 : 60}
+            height={window.innerWidth < 600 ? 40 : 60}
+          />
+          <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
+            400+ Test Available
+          </h4>
+        </div>
+
+        {/* 4th item */}
+        <div className="relative flex flex-col items-center p-3 sm:p-6 bg-white rounded shadow-xl">
+          <Image
+            src={"/images/certified.png"}
+            className="p-1 -mt-1 mb-2"
+            alt=""
+            width={window.innerWidth < 600 ? 40 : 60}
+            height={window.innerWidth < 600 ? 40 : 60}
+          />
+          <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
+            Certified Lebas
+          </h4>
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Hero;

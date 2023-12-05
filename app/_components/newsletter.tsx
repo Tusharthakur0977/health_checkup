@@ -1,7 +1,7 @@
 export default function Newsletter() {
   return (
     <section className="relative mt-20">
-      <div className="max-w-[100%] sm:max-w-[60%]  mx-auto px-4 sm:px-6">
+      <div className="max-w-[100%] sm:max-w-[100%]  mx-auto px-4 sm:px-6">
         <div className="pb-12 md:pb-20">
           {/* CTA box */}
           <div
