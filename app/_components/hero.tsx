@@ -38,7 +38,6 @@ const Hero = () => {
       </div>
 
       <div className="w-full grid gap-3 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none p-3 sm:p-5">
-        {/* 1st item */}
         <div className="relative flex flex-col items-center p-2 sm:p-6 bg-white rounded shadow-xl">
           <Image
             src={"/images/delivery.png"}
@@ -52,8 +51,7 @@ const Hero = () => {
           </h4>
         </div>
 
-        {/* 2nd item */}
-        <div className="relative flex flex-col items-center p-3 sm:p-6 bg-white rounded shadow-xl">
+        <div className="relative flex flex-col items-center p-2 sm:p-6 bg-white rounded shadow-xl">
           <Image
             src={"/images/discount.png"}
             className="p-1 -mt-1 mb-2"
@@ -66,8 +64,7 @@ const Hero = () => {
           </h4>
         </div>
 
-        {/* 3rd item */}
-        <div className="relative flex flex-col items-center p-3 sm:p-6 bg-white rounded shadow-xl">
+        <div className="relative flex flex-col items-center p-2 sm:p-6 bg-white rounded shadow-xl">
           <Image
             src={"/images/test.png"}
             className="p-1 -mt-1 mb-2"
@@ -80,8 +77,7 @@ const Hero = () => {
           </h4>
         </div>
 
-        {/* 4th item */}
-        <div className="relative flex flex-col items-center p-3 sm:p-6 bg-white rounded shadow-xl">
+        <div className="relative flex flex-col items-center p-2 sm:p-6 bg-white rounded shadow-xl">
           <Image
             src={"/images/certified.png"}
             className="p-1 -mt-1 mb-2"

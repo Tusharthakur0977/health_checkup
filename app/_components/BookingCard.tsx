@@ -41,7 +41,7 @@ const BookingCard = () => {
           Opt in for whatsapp updates
         </label>
       </div>
-      <button className="text-white font-bold bg-[#14AE70] rounded-lg text-sm px-5 py-2.5 sm:w-[50%] lg:w-[35%]  sm:self-center text-center">
+      <button className="text-white font-bold bg-[#14AE70] rounded-lg text-sm px-5 py-2.5 sm:w-[50%] lg:w-[35%] shadow-lg sm:self-center text-center">
         Request a Callback
       </button>
     </div>
