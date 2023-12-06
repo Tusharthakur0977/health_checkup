@@ -4,8 +4,11 @@ import React from "react";
 import Slider from "react-slick";
 import PlanData from "../_data/PlanData";
 import PlanCard from "./PlanCard";
+import useWindowDimensions from "../_hooks/useWindowDimensions";
 
 const Plans = () => {
+  const { width } = useWindowDimensions();
+
   const settings = {
     dots: false,
     infinite: false,
@@ -33,7 +36,7 @@ const Plans = () => {
       <p className="text-center font-semibold text-xl sm:text:xl ">
         Best Plans
       </p>
-      {window.innerWidth < 600 ? (
+      {width! < 600 ? (
         <Slider arrows className="w-[90%] self-center m-0" {...settings}>
           {renderPLanCard}
         </Slider>

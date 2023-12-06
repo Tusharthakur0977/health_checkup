@@ -3,8 +3,10 @@
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
+import useWindowDimensions from "../_hooks/useWindowDimensions";
 
 const Hero = () => {
+  const { width } = useWindowDimensions();
   const settings = {
     dots: false,
     autoplay: true,
@@ -20,7 +22,7 @@ const Hero = () => {
         <Image
           src="/images/logo.png"
           alt=""
-          width={window.innerWidth < 600 ? 100 : 130}
+          width={width! < 600 ? 100 : 130}
           height={40}
         />
         <p className="flex-1 text-sm sm:text-xl font-medium font-sans text-center px-10">
@@ -43,8 +45,8 @@ const Hero = () => {
             src={"/images/delivery.png"}
             className="p-1 -mt-1 mb-2"
             alt=""
-            width={window.innerWidth < 600 ? 40 : 60}
-            height={window.innerWidth < 600 ? 40 : 60}
+            width={width! < 600 ? 40 : 60}
+            height={width! < 600 ? 40 : 60}
           />
           <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
             Free Home Sample Collection
@@ -56,8 +58,8 @@ const Hero = () => {
             src={"/images/discount.png"}
             className="p-1 -mt-1 mb-2"
             alt=""
-            width={window.innerWidth < 600 ? 40 : 60}
-            height={window.innerWidth < 600 ? 40 : 60}
+            width={width! < 600 ? 40 : 60}
+            height={width! < 600 ? 40 : 60}
           />
           <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
             Up to 60% Discount on all test
@@ -69,8 +71,8 @@ const Hero = () => {
             src={"/images/test.png"}
             className="p-1 -mt-1 mb-2"
             alt=""
-            width={window.innerWidth < 600 ? 40 : 60}
-            height={window.innerWidth < 600 ? 40 : 60}
+            width={width! < 600 ? 40 : 60}
+            height={width! < 600 ? 40 : 60}
           />
           <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
             400+ Test Available
@@ -82,8 +84,8 @@ const Hero = () => {
             src={"/images/certified.png"}
             className="p-1 -mt-1 mb-2"
             alt=""
-            width={window.innerWidth < 600 ? 40 : 60}
-            height={window.innerWidth < 600 ? 40 : 60}
+            width={width! < 600 ? 40 : 60}
+            height={width! < 600 ? 40 : 60}
           />
           <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
             Certified Lebas
