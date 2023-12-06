@@ -1,6 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { BookModalContext } from "../_context/BookModalContext";
+import React from "react";
 
 const BookingCard = () => {
+  const { isBookModal, setIsBookModal } = React.useContext(BookModalContext);
+
   return (
     <div className="w-[100%] sm:w-[80%] bg-[#d8e2dc] flex flex-col px-4 py-6 justify-center sm:my-3">
       <p className="font-bold text-center text-lg sm:text-xl mb-5">
@@ -41,7 +47,10 @@ const BookingCard = () => {
           Opt in for whatsapp updates
         </label>
       </div>
-      <button className="text-white font-bold bg-[#14AE70] rounded-lg text-sm px-5 py-2.5 sm:w-[50%] lg:w-[35%] shadow-lg sm:self-center text-center">
+      <button
+        onClick={() => setIsBookModal(!isBookModal)}
+        className="text-white font-bold bg-[#14AE70] rounded-lg text-sm px-5 py-2.5 sm:w-[50%] lg:w-[35%] shadow-lg sm:self-center text-center"
+      >
         Request a Callback
       </button>
     </div>

@@ -9,43 +9,43 @@ const LaserBenefits = () => {
   const TABLE_ROWS = [
     {
       name: "Cuts",
-      job: "MULTIPLE",
-      date: "NO",
+      withoutLaser: "MULTIPLE",
+      withLaser: "NO",
     },
     {
       name: "Scars & Stiches",
-      job: "MULTIPLE",
-      date: "NO",
+      withoutLaser: "MULTIPLE",
+      withLaser: "NO",
     },
     {
       name: "Procedure",
-      job: "PAINFUL",
-      date: "MINIMAL PAIN",
+      withoutLaser: "PAINFUL",
+      withLaser: "MINIMAL PAIN",
     },
     {
       name: "Blood Loss",
-      job: "HIGH",
-      date: "LOW",
+      withoutLaser: "HIGH",
+      withLaser: "LOW",
     },
     {
       name: "Infection Chances",
-      job: "HIGH",
-      date: "LOW",
+      withoutLaser: "HIGH",
+      withLaser: "LOW",
     },
     {
       name: "Recovery",
-      job: "BED REST",
-      date: "FAST",
+      withoutLaser: "BED REST",
+      withLaser: "FAST",
     },
     {
       name: "Hospital Duration",
-      job: "3-4 DAYS",
-      date: "1 DAY ONLY",
+      withoutLaser: "3-4 DAYS",
+      withLaser: "1 DAY ONLY",
     },
     {
       name: "Technology",
-      job: "OUTDATED",
-      date: "OUTDATED",
+      withoutLaser: "OUTwithLaserD",
+      withLaser: "OUTwithLaserD",
     },
   ];
 
@@ -68,27 +68,20 @@ const LaserBenefits = () => {
             </tr>
           </thead>
           <tbody>
-            {TABLE_ROWS.map(({ name, job, date }, index) => {
+            {TABLE_ROWS.map(({ name, withoutLaser, withLaser }, index) => {
               return (
-                <tr
-                  className={`${
-                    index === TABLE_ROWS.length - 1
-                      ? ""
-                      : "border-b border-gray-900 "
-                  }`}
-                  key={name}
-                >
+                <tr className="border-t border-gray-900" key={name}>
                   <td className="px-3 py-4">
                     <p className="font-semibold text-xs">{name}</p>
                   </td>
-                  <td className="mx-2">
-                    <p className="font-semibold text-xs text-center text-black bg-gray-300 p-2 rounded-2xl">
-                      {job}
+                  <td className="pr-3">
+                    <p className="font-semibold text-xs text-center text-black bg-gray-300 p-1 rounded-2xl">
+                      {withoutLaser}
                     </p>
                   </td>
-                  <td className="">
-                    <p className="font-semibold text-xs text-center text-white bg-blue-500 p-2 rounded-2xl">
-                      {date}
+                  <td className="pr-3">
+                    <p className="font-semibold text-xs text-center text-white bg-blue-500 p-1 rounded-2xl">
+                      {withLaser}
                     </p>
                   </td>
                 </tr>
