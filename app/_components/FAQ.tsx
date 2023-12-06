@@ -7,6 +7,8 @@ import {
 } from "@material-tailwind/react";
 import React from "react";
 import FaqData from "../_data/FaqData";
+import { HiPlusCircle } from "react-icons/hi";
+import { HiMiniMinusCircle } from "react-icons/hi2";
 
 const FAQ = () => {
   const [open, setOpen] = React.useState(0);
@@ -20,17 +22,24 @@ const FAQ = () => {
       <div className="flex flex-col gap-4">
         {FaqData.map((faq, index) => (
           <Accordion
-            className="w-full sm:w-[80%] sm:self-center p-1 bg-blue-400 shadow-md rounded-md"
+            className="w-full sm:w-[80%] sm:self-center shadow-md rounded-md"
             open={open === index + 1}
             key={faq.title}
           >
             <AccordionHeader
-              className="bg-red-300"
+              className="p-3 flex justify-between items-center gap-4"
               onClick={() => handleOpen(index + 1)}
             >
-              <p>{faq.title}</p>
+              <p className="text-sm font-bold flex-1">{faq.title}</p>
+              {open === index + 1 ? (
+                <HiMiniMinusCircle style={{ height: 20, width: 20 }} />
+              ) : (
+                <HiPlusCircle style={{ height: 20, width: 20 }} />
+              )}
             </AccordionHeader>
-            <AccordionBody>{faq.desc}</AccordionBody>
+            <AccordionBody className="px-4 text-left ">
+              {faq.desc}
+            </AccordionBody>
           </Accordion>
         ))}
       </div>
