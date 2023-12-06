@@ -10,8 +10,8 @@ import ReviewCard from "./ReviewCard";
 const WhyChooseUS = () => {
   const settings = {
     dots: false,
-    infinite: false,
-    speed: 700,
+    infinite: true,
+    speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -41,7 +41,7 @@ const WhyChooseUS = () => {
           {WhyChooseUsData.map((item) => (
             <div
               key={item.title}
-              className="flex gap-5 justify-between items-center"
+              className="flex gap-5 px-4 justify-between items-center"
             >
               <Image alt="" src={item.image} width={40} height={30} />
               <p className="text-white flex-1 font-medium font-serif text-sm sm:text-xl text-left">
@@ -50,17 +50,17 @@ const WhyChooseUS = () => {
             </div>
           ))}
         </div>
-        <button className="self-center font-bold bg-white rounded-lg text-sm px-5 py-2.5 w-[50%] lg:w-[35%] shadow-lg sm:self-center text-center">
-          Book Now
-        </button>
       </div>
       <Slider
         autoplay
-        className="shadow-xl rounded w-[90%] sm:w-[70%] self-center m-0"
+        className="w-[90%] sm:w-[70%] self-center m-0"
         {...settings}
       >
         {renderReviews}
       </Slider>
+      <button className="self-center font-bold bg-white rounded-lg text-sm px-5 py-2.5 w-[50%] lg:w-[35%] shadow-lg sm:self-center text-center">
+        Book Now
+      </button>
     </div>
   );
 };

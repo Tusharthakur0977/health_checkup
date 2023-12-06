@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-[100%] sm:w-[80%] flex flex-col ">
+    <div className="w-[100%] sm:w-[80%] flex flex-col mb-4">
       <div className="flex justify-between items-center w-full px-4 pb-3 shadow-md">
         <Image
           src="/images/logo.png"

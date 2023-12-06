@@ -37,3 +37,10 @@ body,
     rgba(12, 116, 117, 1) 90%
   );
 }
+
+.slick-list {
+  margin: 0 -7px;
+}
+.slick-slide > div {
+  padding: 0 10px;
+}

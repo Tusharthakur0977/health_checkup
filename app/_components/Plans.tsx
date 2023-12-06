@@ -30,15 +30,11 @@ const Plans = () => {
 
   return (
     <div className="w-full sm:w-[90%] p-3 flex flex-col my-3 gap-4">
-      <p className="text-center font-semibold text-xl sm:text:xl border-b border-black ">
+      <p className="text-center font-semibold text-xl sm:text:xl ">
         Best Plans
       </p>
       {window.innerWidth < 600 ? (
-        <Slider
-          arrows
-          className="shadow-xl rounded w-[90%] self-center m-0 "
-          {...settings}
-        >
+        <Slider arrows className="w-[90%] self-center m-0" {...settings}>
           {renderPLanCard}
         </Slider>
       ) : (

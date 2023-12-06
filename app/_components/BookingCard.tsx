@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const BookingCard = () => {
   return (
-    <div className="w-[100%] sm:w-[80%] flex flex-col p-4 justify-center sm:my-3">
+    <div className="w-[100%] sm:w-[80%] bg-[#d8e2dc] flex flex-col px-4 py-6 justify-center sm:my-3">
       <p className="font-bold text-center text-lg sm:text-xl mb-5">
         Book your Test
       </p>

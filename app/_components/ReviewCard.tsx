@@ -11,7 +11,7 @@ interface IReviewCard {
 
 const ReviewCard: React.FC<IReviewCard> = ({ desc, image, name, rating }) => {
   return (
-    <div className="flex flex-col p-3 bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
+    <div className="flex flex-col p-3 self-center bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
       <Image
         className="rounded-full p-3"
         alt=""

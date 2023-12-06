@@ -13,15 +13,14 @@ interface IPlanCard {
 const PlanCard: React.FC<IPlanCard> = ({ name, title, amount, test }) => {
   return (
     <div
-      className={`flex flex-col p-6 mx-auto sm:max-w-lg w-full text-center  text-gray-900 bg-white rounded-lg  ${
-        window.innerWidth > 600 &&
-        "shadow-2xl border border-[#5c5a5a] sm:border-none"
-      }`}
+      className={`flex flex-col p-6 sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-white rounded-lg border border-[#14AE70]`}
     >
       <h3 className="mb-2 text-xl sm:text-2xl font-semibold font-sans">
         {name}
       </h3>
-      <p className="font-normal font-sans sm:text-lg">{title}</p>
+      <p className="font-semibold w-full font-sans text-sm text-gray-500 sm:text-lg">
+        {title}
+      </p>
       <div className="flex justify-center items-baseline my-2">
         ₹
         <span className="mr-2 ms-1 text-2xl text-[#14AE70] font-bold">
@@ -31,13 +30,13 @@ const PlanCard: React.FC<IPlanCard> = ({ name, title, amount, test }) => {
           {amount.withoutDiscount}
         </span>
       </div>
-      <p className="font-bold font-sans w-[200px] self-center text-center mb-8 sm:text-lg px-2 py-1 rounded-2xl text-white bg-[#14AE70]">
+      <p className="font-medium font-serif self-center text-center mb-8 text-sm sm:text-lg px-4 rounded-2xl text-white bg-[#14AE70]">
         Includes {test.length} Tests
       </p>
 
       <ul role="list" className="mb-8  text-left grid gap-4 grid-cols-2">
         {test.map((item) => (
-          <li key={item} className="flex items-center justify-start">
+          <li key={item} className="flex gap-2 items-center justify-start">
             <svg
               className="flex-shrink-0 w-5 h-5 font-bold text-green-500 dark:text-green-400"
               fill="currentColor"
@@ -50,7 +49,7 @@ const PlanCard: React.FC<IPlanCard> = ({ name, title, amount, test }) => {
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <span>{item}</span>
+            <span className="text-xs font-semibold">{item}</span>
           </li>
         ))}
       </ul>
