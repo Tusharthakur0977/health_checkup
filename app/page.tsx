@@ -1,6 +1,6 @@
 import BookingCard from "./_components/BookingCard";
 import FAQ from "./_components/FAQ";
-import Hero from "./_components/hero";
+import Hero from "./_components/Hero";
 import LaserBenefits from "./_components/LaserBenefits";
 import BookTestModal from "./_components/Modals/BookTestModal";
 import Plans from "./_components/Plans";
