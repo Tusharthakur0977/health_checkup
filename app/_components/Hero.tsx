@@ -38,7 +38,7 @@ const Hero = () => {
         </Slider>
       </div>
 
-      <div className="w-full grid gap-3 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none px-3 py-3 sm:px-0 sm:py-5">
+      <div className="w-full grid gap-2 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none px-3 py-3 sm:px-0 sm:py-5">
         <div className="relative flex flex-col items-center p-2 sm:p-6 bg-[#38a3a5] rounded ">
           <Image
             src={"/images/delivery.png"}

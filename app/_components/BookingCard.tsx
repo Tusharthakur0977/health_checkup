@@ -7,7 +7,7 @@ import { BookModalContext } from "../_context/BookModalContext";
 import StickyButton from "./StickyButton";
 
 const BookingCard = () => {
-  const { isBookModal, setIsBookModal, isFormFilled } =
+  const { isBookModal, setIsBookModal, isFormFilled, setIsFormFilled } =
     React.useContext(BookModalContext);
 
   const [formData, setFormData] = React.useState({
@@ -29,7 +29,13 @@ const BookingCard = () => {
 
   const onSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(formData);
+    if (
+      formData.name.length > 0 ||
+      formData.phone.length === 10 ||
+      formData.location.length > 0
+    ) {
+      setIsFormFilled(true);
+    }
   };
 
   return (

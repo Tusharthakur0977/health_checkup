@@ -10,6 +10,7 @@ import StickyButton from "./_components/StickyButton";
 import TopHeader from "./_components/TopHeader";
 import WhyChooseUS from "./_components/WhyChooseUS";
 import { BookModalContext } from "./_context/BookModalContext";
+import StepsJourney from "./_components/StepsJourney";
 
 export default function Home() {
   const { isBookModal, setIsBookModal } = React.useContext(BookModalContext);
@@ -21,6 +22,7 @@ export default function Home() {
       <BookingCard />
       <Plans />
       <WhyChooseUS />
+      <StepsJourney />
       <FAQ />
       <BookTestModal />
       <StickyButton
@@ -28,7 +30,7 @@ export default function Home() {
         bgColor="#22577a"
         color="white"
         isSticky
-        extraClasses="w-[90%]"
+        extraClasses="w-[90%] sm:hidden"
         onClick={() => setIsBookModal(!isBookModal)}
       />
     </main>
