@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import BookModalProvider from "./_context/BookModalContext";
 import "./globals.css";
-import { Head } from "next/document";
 
 const inter = Inter({ subsets: ["latin"] });
 const GTM_ID = "GTM-WPWDT5RS";
