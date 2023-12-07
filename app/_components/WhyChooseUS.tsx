@@ -32,7 +32,7 @@ const WhyChooseUS = () => {
   );
 
   return (
-    <div className="w-full sm:w-[90%] px-4 sm:px-6 py-5 sm:py-7 flex flex-col shadow-xl rounded-lg my-3 gap-4 bg-gradient-to-br from-green-500 to-blue-800 custom-radial-gradient">
+    <div className="w-full sm:w-[95%] px-4 sm:px-6 py-7 sm:py-12 flex flex-col shadow-xl rounded-lg mb-3 gap-4 bg-gradient-to-br from-green-500 to-blue-800 custom-radial-gradient">
       <p className="text-center font-bold text-xl sm:text:2xl text-white">
         Why Choose ClearVikalp?
       </p>

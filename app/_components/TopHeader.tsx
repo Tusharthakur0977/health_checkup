@@ -11,7 +11,7 @@ const TopHeader = () => {
   const isTextLongEnough = text.length > 50;
 
   return (
-    <div className="scrollable-text-container w-[100%] sm:w-[80%] px-3 py-2 text-center text-white text-sm sm:text-base bg-[#14AE70] font-bold">
+    <div className="scrollable-text-container w-[100%] sm:w-[95%] px-3 py-2 text-center text-white text-sm sm:text-base bg-[#22577a] font-bold">
       <div
         className={`${
           isTextLongEnough && width! < 900 && "scrollable-text-content"

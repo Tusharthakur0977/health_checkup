@@ -22,22 +22,29 @@ const FAQ = () => {
       <div className="flex flex-col gap-4">
         {FaqData.map((faq, index) => (
           <Accordion
-            className="w-full sm:w-[80%] sm:self-center shadow-md rounded-md"
+            className="w-full sm:w-[80%] sm:self-center shadow-md rounded-t-md"
             open={open === index + 1}
             key={faq.title}
           >
             <AccordionHeader
-              className="p-3 flex justify-between items-center gap-4"
+              className="p-3 flex justify-between items-center gap-4  "
               onClick={() => handleOpen(index + 1)}
             >
-              <p className="text-sm font-bold flex-1">{faq.title}</p>
+              <p className="text-sm  font-bold flex-1">{faq.title}</p>
               {open === index + 1 ? (
-                <HiMiniMinusCircle style={{ height: 20, width: 20 }} />
+                <HiMiniMinusCircle style={{ height: 30, width: 30 }} />
               ) : (
-                <HiPlusCircle style={{ height: 20, width: 20 }} />
+                <HiPlusCircle
+                  className="bg-[#22577a] rounded-full"
+                  style={{
+                    height: 25,
+                    width: 25,
+                    color: "white",
+                  }}
+                />
               )}
             </AccordionHeader>
-            <AccordionBody className="px-4 text-left ">
+            <AccordionBody className="px-4 text-left bg-[#22577a] text-white rounded-b-md">
               {faq.desc}
             </AccordionBody>
           </Accordion>

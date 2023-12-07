@@ -53,7 +53,7 @@ const PlanCard: React.FC<IPlanCard> = ({ name, title, amount, test }) => {
           </li>
         ))}
       </ul>
-      <button className="text-white font-bold bg-[#14AE70] hover:bg-primary-700 focus:ring-4 focus:ring-primary-200  rounded-lg text-sm px-5 py-2.5 text-center">
+      <button className="text-white font-bold bg-[#22577a] hover:bg-primary-700 focus:ring-4 focus:ring-primary-200  rounded-lg text-sm px-5 py-2.5 text-center">
         Select a Plan
       </button>
     </div>

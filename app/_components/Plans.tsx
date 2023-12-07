@@ -32,9 +32,12 @@ const Plans = () => {
   );
 
   return (
-    <div className="w-full sm:w-[90%] p-3 flex flex-col my-3 gap-4">
+    <div className="w-full sm:w-[95%] bg-[#edf6f9] px-3 py-8 flex flex-col mt-5 gap-2">
       <p className="text-center font-semibold text-xl sm:text:xl ">
         Best Plans
+      </p>
+      <p className="text-center font-medium text-base sm:text:lg mb-3 text-gray-500">
+        Empowering your health with tailored test solutions.
       </p>
       {width! < 600 ? (
         <Slider arrows className="w-[90%] self-center m-0" {...settings}>
