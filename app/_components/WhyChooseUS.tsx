@@ -58,9 +58,9 @@ const WhyChooseUS = () => {
       >
         {renderReviews}
       </Slider>
-      <button className="self-center font-bold bg-white rounded-lg text-sm px-5 py-2.5 w-[50%] lg:w-[35%] shadow-lg sm:self-center text-center">
+      {/* <button className="self-center font-bold bg-white rounded-lg text-sm px-5 py-2.5 w-[70%] lg:w-[35%] shadow-lg sm:self-center text-center">
         Book Now
-      </button>
+      </button> */}
     </div>
   );
 };

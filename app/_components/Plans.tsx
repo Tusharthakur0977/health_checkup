@@ -40,7 +40,11 @@ const Plans = () => {
         Empowering your health with tailored test solutions.
       </p>
       {width! < 600 ? (
-        <Slider arrows className="w-[90%] self-center m-0" {...settings}>
+        <Slider
+          arrows
+          className="w-[90%] self-center m-0 overflow-visible"
+          {...settings}
+        >
           {renderPLanCard}
         </Slider>
       ) : (
