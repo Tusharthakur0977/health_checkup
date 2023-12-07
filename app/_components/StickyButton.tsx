@@ -9,6 +9,8 @@ interface IStickyButton {
   color: string;
   extraClasses?: string;
   onClick?: () => void;
+  disabled?: boolean;
+  type?: "button" | "submit";
 }
 
 const StickyButton: React.FC<IStickyButton> = ({
@@ -18,6 +20,8 @@ const StickyButton: React.FC<IStickyButton> = ({
   label,
   extraClasses,
   onClick,
+  disabled,
+  type,
 }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -40,10 +44,12 @@ const StickyButton: React.FC<IStickyButton> = ({
 
   return (
     <button
+      type={type || "button"}
+      disabled={disabled}
       onClick={onClick}
       className={`text-${color}  font-bold bg-[${bgColor}] ${extraClasses} hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 rounded-lg text-sm px-5 py-2.5 text-center ${
         isSticky && isVisible && "fixed bottom-2 mx-auto"
-      }  `}
+      } ${disabled && "opacity-70 cursor-not-allowed"} `}
     >
       {label}
     </button>

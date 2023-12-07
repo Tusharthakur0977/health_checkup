@@ -87,7 +87,7 @@ const Hero = () => {
             height={width! < 600 ? 40 : 60}
           />
           <h4 className="text-[12px] sm:text-xl text-center font-bold leading-snug tracking-tight mb-1 text-white">
-            Certified Lebas
+            Certified Labs
           </h4>
         </div>
       </div>
