@@ -19,7 +19,7 @@ const StickyButton: React.FC<IStickyButton> = ({
   extraClasses,
   onClick,
 }) => {
-  const [isVisible, setIsVisible] = React.useState(true);
+  const [isVisible, setIsVisible] = React.useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 500) {
