@@ -33,16 +33,40 @@ const Hero = () => {
 
       <div className="w-full overflow-hidden px-3 py-3 sm:px-0  ">
         <Slider {...settings}>
-          <Image src="/images/banner.jpg" alt="" width={100} height={10} />
-          <Image src="/images/banner1.jpg" alt="" width={100} height={10} />
-          <Image src="/images/banner.jpg" alt="" width={100} height={10} />
+          <Image
+            src="/images/banner/1.jpg"
+            className="w-auto h-auto"
+            alt=""
+            width={100}
+            height={10}
+          />
+          <Image
+            src="/images/banner/2.jpg"
+            className="w-auto h-auto"
+            alt=""
+            width={100}
+            height={10}
+          />
+          <Image
+            src="/images/banner/3.jpg"
+            className="w-auto h-auto"
+            alt=""
+            width={100}
+            height={10}
+          />
+          <Image
+            src="/images/banner/4.jpg"
+            className="w-auto h-auto"
+            alt=""
+            width={100}
+            height={10}
+          />
         </Slider>
       </div>
 
       <div className="w-full grid gap-2 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none px-3 py-3 sm:px-0 sm:py-5">
         <div className="relative flex flex-col items-center p-2 sm:p-6 bg-[#38a3a5] rounded ">
           <Image
-          
             src={"/images/delivery.png"}
             className="p-1 -mt-1 mb-2"
             alt=""
