@@ -20,6 +20,7 @@ const Hero = () => {
     <div className="w-[100%] sm:w-[95%] flex flex-col mb-4">
       <div className="flex justify-between items-center w-full px-2 sm:px-0 pb-1 shadow-md">
         <Image
+          className="w-auto h-auto"
           src="/images/logo.jpeg"
           alt=""
           width={width! < 600 ? 100 : 130}
@@ -41,6 +42,7 @@ const Hero = () => {
       <div className="w-full grid gap-2 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none px-3 py-3 sm:px-0 sm:py-5">
         <div className="relative flex flex-col items-center p-2 sm:p-6 bg-[#38a3a5] rounded ">
           <Image
+          
             src={"/images/delivery.png"}
             className="p-1 -mt-1 mb-2"
             alt=""

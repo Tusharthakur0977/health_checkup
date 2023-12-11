@@ -27,8 +27,6 @@ const StickyButton: React.FC<IStickyButton> = ({
 
   const handleScroll = () => {
     if (window.scrollY > 500) {
-      console.log("HHHHH");
-
       setIsVisible(true);
     } else {
       setIsVisible(false);

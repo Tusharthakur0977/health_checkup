@@ -43,7 +43,13 @@ const WhyChooseUS = () => {
               key={item.title}
               className="flex gap-5 px-4 justify-between items-center"
             >
-              <Image alt="" src={item.image} width={40} height={30} />
+              <Image
+                className="w-auto h-auto"
+                alt=""
+                src={item.image}
+                width={40}
+                height={30}
+              />
               <p className="text-white flex-1 font-medium font-serif text-sm sm:text-xl text-left">
                 {item.title}
               </p>

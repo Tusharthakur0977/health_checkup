@@ -10,11 +10,8 @@ const StepsJourney = () => {
         Steps.
       </p>
       {StepData.map((steps, index) => (
-        <>
-          <div
-            key={index}
-            className="w-[90%] relative rounded-md p-3 shadow-lg ring-1 ring-slate-900/10"
-          >
+        <React.Fragment key={index}>
+          <div className="w-[90%] relative rounded-md p-3 shadow-lg ring-1 ring-slate-900/10">
             <div className="flex items-center gap-6">
               <p className="px-4 py-2 font-bold bg-[#38a3a5] text-white rounded-full">
                 {index + 1}
@@ -44,7 +41,7 @@ const StepsJourney = () => {
                   alt=""
                   width={30}
                   height={30}
-                  className={`absolute -bottom-10 ${
+                  className={`w-auto h-auto absolute -bottom-10 ${
                     index === 1 ? "-right-4" : "-left-4"
                   }  `}
                 />
@@ -54,7 +51,7 @@ const StepsJourney = () => {
           {index + 1 < StepData.length && (
             <div className="h-4 bg-[#22577a] self-center w-[2px]"></div>
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

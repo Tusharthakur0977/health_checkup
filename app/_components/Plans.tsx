@@ -33,7 +33,7 @@ const Plans = () => {
 
   return (
     <div className="w-full sm:w-[95%] bg-[#edf6f9] px-3 py-8 flex flex-col mt-5 gap-2">
-      <p className="text-center font-semibold text-xl sm:text:xl ">
+      <p className="text-center font-semibold text-xl sm:text:xl text-[#38a3a5]">
         Best Plans
       </p>
       <p className="text-center font-medium text-base sm:text:lg mb-3 text-gray-500">
