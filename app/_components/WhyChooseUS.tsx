@@ -59,7 +59,7 @@ const WhyChooseUS = () => {
       </div>
       <Slider
         autoplay
-        className="w-[90%] sm:w-[70%] self-center m-0"
+        className="w-[90%] sm:w-[70%] self-center m-0 "
         {...settings}
       >
         {renderReviews}

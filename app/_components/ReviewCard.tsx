@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import useWindowDimensions from "../_hooks/useWindowDimensions";
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
 interface IReviewCard {
   name: string;
@@ -13,14 +14,26 @@ const ReviewCard: React.FC<IReviewCard> = ({ desc, image, name, rating }) => {
   const { width } = useWindowDimensions();
 
   return (
-    <div className="flex flex-col p-3 self-center bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
+    <div className="flex flex-col p-3 mt-8 self-center bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
       <Image
-        className="rounded-full p-3"
+        className="rounded-full absolute top-0 border-2 border-white"
         alt=""
         src={image}
         width={width! < 567 ? 60 : 100}
         height={width! < 567 ? 60 : 100}
       />
+      <div className="flex flex-col">
+        <RiDoubleQuotesL className="text-amber-500 " size="1.4rem" />
+
+        <p className="text-lg flex font-normal text-gray-700 text-center">
+          {desc}
+        </p>
+        <RiDoubleQuotesR
+          className="text-amber-500 font-bold"
+          style={{ alignSelf: "end" }}
+          size="1.4rem"
+        />
+      </div>
       <div className="flex gap-2">
         {Array.from({ length: 5 }).map((_, index) => {
           return index + 1 <= rating ? (
@@ -56,8 +69,6 @@ const ReviewCard: React.FC<IReviewCard> = ({ desc, image, name, rating }) => {
           );
         })}
       </div>
-      <p className="text-sm font-normal text-gray-700 text-center">{desc}</p>
-      <p className="text-sm font-bold text-center">{name}</p>
     </div>
   );
 };

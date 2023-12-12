@@ -16,13 +16,17 @@ const FAQ = () => {
   const handleOpen = (value: number) => setOpen(open === value ? 0 : value);
   return (
     <div className="w-full sm:w-[90%] p-3 flex flex-col my-3 gap-4">
-      <p className="text-center font-semibold text-xl sm:text:xl border-b border-black ">
-        FAQ&apos;s
+      <p className="text-center font-semibold text-xl sm:text:xl ">
+        Frequently Asked{" "}
+        <span className="text-[#22577a] font-extrabold">Questions</span>
       </p>
+      <div className="h-1 w-[20%] self-center rounded-sm bg-[#22577a]" />
       <div className="flex flex-col gap-4">
         {FaqData.map((faq, index) => (
           <Accordion
-            className="w-full sm:w-[80%] sm:self-center shadow-md rounded-t-md"
+            className={`w-full sm:w-[80%]  ${
+              open === index + 1 ? "bg-[#22577a]" : "bg-[#ccdbfd]"
+            }   sm:self-center shadow-md rounded-t-md`}
             open={open === index + 1}
             key={faq.title}
           >
@@ -30,21 +34,34 @@ const FAQ = () => {
               className="p-3 flex justify-between items-center gap-4  "
               onClick={() => handleOpen(index + 1)}
             >
-              <p className="text-sm  font-bold flex-1">{faq.title}</p>
+              <p
+                className={`text-sm ${
+                  open === index + 1 ? "text-white" : "text-black"
+                } font-bold flex-1`}
+              >
+                {faq.title}
+              </p>
               {open === index + 1 ? (
-                <HiMiniMinusCircle style={{ height: 30, width: 30 }} />
+                <HiMiniMinusCircle
+                  className="rounded-full"
+                  style={{
+                    height: 30,
+                    width: 30,
+                    color: "white",
+                  }}
+                />
               ) : (
                 <HiPlusCircle
-                  className="bg-[#22577a] rounded-full"
+                  className="bg-[#ccdbfd] rounded-full"
                   style={{
                     height: 25,
                     width: 25,
-                    color: "white",
+                    color: "#22577a",
                   }}
                 />
               )}
             </AccordionHeader>
-            <AccordionBody className="px-4 text-left bg-[#22577a] text-white rounded-b-md">
+            <AccordionBody className="px-4 text-left bg-[#ccdbfd] text-black rounded-b-md">
               {faq.desc}
             </AccordionBody>
           </Accordion>

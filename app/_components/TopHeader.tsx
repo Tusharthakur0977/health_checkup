@@ -7,7 +7,7 @@ const TopHeader = () => {
   const { width } = useWindowDimensions();
 
   const text =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ea sunt voluptatem neque perferendis? Iusto modi ullam accusamus quisquam minus.";
+    "Looking for a health checkup? Book the full body health Check-up Today";
   const isTextLongEnough = text.length > 50;
 
   return (

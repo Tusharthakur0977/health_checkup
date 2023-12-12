@@ -41,18 +41,25 @@ const BookingCard = () => {
   return (
     <div
       className={`w-[95%] ${
-        !isFormFilled && "bg-[#22577a]"
-      } rounded-md flex flex-col px-4 py-6 justify-center shadow-lg ring-1 ring-slate-900/10`}
+        !isFormFilled && "bg-white border-1 border-[#22577a]"
+      } rounded-md flex flex-col px-4 py-6 justify-center gap-2 shadow-lg ring-1 ring-slate-900/10`}
     >
       <div className="relative w-full px-3">
         <p
-          className={` ${isFormFilled ? "font-semibold" : "font-bold"} ${
+          className={` ${isFormFilled ? "font-semibold" : "font-bold "} ${
             isFormFilled && "font-inter"
-          } text-center text-${
-            isFormFilled ? "black" : "white"
-          } text-lg sm:text-xl ${!isFormFilled && "mb-5"}`}
+          } text-center text-black text-lg sm:text-xl ${!isFormFilled && ""}`}
         >
-          {isFormFilled ? "Thank you for Booking your Call" : "Book your Test"}
+          {isFormFilled ? (
+            "Thank you for Booking your Call"
+          ) : (
+            <>
+              Get a Call in{" "}
+              <span className="text-[#22577a] font-bold tracking-wide text-[20px]">
+                20 Mins
+              </span>
+            </>
+          )}
         </p>
         {isBookModal && (
           <button className="absolute top-1 right-0" onClick={handleOpen}>
@@ -62,6 +69,8 @@ const BookingCard = () => {
           </button>
         )}
       </div>
+      <div className="h-[2px] w-[20%] mb-2 self-center bg-[#22577a]" />
+
       {isFormFilled ? (
         <div className="flex flex-col items-center gap-3">
           <p className="text-center font-normal text-sm sm:text-xl">
@@ -114,14 +123,14 @@ const BookingCard = () => {
           </div> */}
           <StickyButton
             label="Request a Callback"
-            bgColor="#14AE70"
+            bgColor="#22577a"
             color="white"
             extraClasses="w-full sm:w-[50%] lg:w-[35%] sm:self-center mt-3"
-            disabled={
-              formData.location === "" ||
-              formData.name === "" ||
-              formData.phone === ""
-            }
+            // disabled={
+            //   formData.location === "" ||
+            //   formData.name === "" ||
+            //   formData.phone === ""
+            // }
             type="submit"
           />
         </form>

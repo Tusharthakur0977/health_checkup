@@ -16,7 +16,7 @@ export default function Home() {
   const { isBookModal, setIsBookModal } = React.useContext(BookModalContext);
 
   return (
-    <main className="flex flex-col justify-center items-center pb-10">
+    <main className="flex flex-col justify-center items-center pb-10 bg-[#FCF5EC]">
       <TopHeader />
       <Hero />
       <BookingCard />
