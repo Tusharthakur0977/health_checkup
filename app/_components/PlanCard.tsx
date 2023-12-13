@@ -6,8 +6,6 @@ import {
   MdKeyboardDoubleArrowUp,
 } from "react-icons/md";
 import StickyButton from "./StickyButton";
-import Image from "next/image";
-import card from "@material-tailwind/react/theme/components/card";
 interface IPlanCard {
   name: string;
   title: string;
@@ -60,8 +58,6 @@ const PlanCard: React.FC<IPlanCard> = ({
       setShowmore(false);
     };
   }, [isSwiped]);
-
-  console.log(amount);
 
   return (
     <div

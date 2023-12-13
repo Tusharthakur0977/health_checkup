@@ -41,9 +41,10 @@ const Hero = () => {
       </p>
       <div className="w-full overflow-hidden px-3 py-3 sm:px-0  ">
         <Slider {...settings}>
-          <Image src="/images/banner.jpg" alt="" width={100} height={10} />
-          <Image src="/images/banner1.jpg" alt="" width={100} height={10} />
-          <Image src="/images/banner.jpg" alt="" width={100} height={10} />
+          <img src="/images/1.png" alt="" />
+          <img src="/images/2.png" alt="" />
+          <img src="/images/3.png" alt="" />
+          <img src="/images/4.png" alt="" />
         </Slider>
       </div>
 
@@ -57,8 +58,8 @@ const Hero = () => {
               src={card.img}
               className="p-1 -mt-1 mb-2"
               alt=""
-              width={width! < 600 ? 40 : 60}
-              height={width! < 600 ? 40 : 60}
+              width={width! < 600 ? 80 : 60}
+              height={width! < 600 ? 80 : 60}
             />
             <h4 className="text-[14px] px-4 sm:text-xl text-center font-bold leading-snug tracking-tight mb-1 text-black">
               {card.title}
