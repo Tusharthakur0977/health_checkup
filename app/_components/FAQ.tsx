@@ -27,7 +27,7 @@ const FAQ = () => {
         {FaqData.map((faq, index) => (
           <Accordion
             className={`w-full sm:w-[80%]  ${
-              open === index + 1 ? "bg-[#22577a]" : "bg-[#ccdbfd]"
+              open === index + 1 ? "bg-[#22577a]" : "bg-[#caf0f8]"
             }   sm:self-center shadow-md rounded-t-md`}
             open={open === index + 1}
             key={faq.title}
@@ -54,7 +54,7 @@ const FAQ = () => {
                 />
               ) : (
                 <HiPlusCircle
-                  className="bg-[#ccdbfd] rounded-full"
+                  className="bg-[#caf0f8] rounded-full"
                   style={{
                     height: 25,
                     width: 25,
@@ -63,7 +63,7 @@ const FAQ = () => {
                 />
               )}
             </AccordionHeader>
-            <AccordionBody className="px-4 text-left bg-[#ccdbfd] text-black rounded-b-md">
+            <AccordionBody className="px-4 text-left bg-[#caf0f8] text-black rounded-b-md">
               {faq.desc}
             </AccordionBody>
           </Accordion>

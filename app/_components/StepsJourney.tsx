@@ -11,7 +11,7 @@ const StepsJourney = () => {
       </p>
       {StepData.map((steps, index) => (
         <React.Fragment key={index}>
-          <div className="w-[90%] relative rounded-md p-3 shadow-2xl ring-1  ring-slate-900/10">
+          <div className="w-[90%] relative rounded-md p-3 shadow-2xl ring-1 bg-white  ring-slate-900/10">
             <div className="flex items-center gap-6">
               <p className="px-4 py-2 font-bold bg-[#38a3a5] text-white rounded-full">
                 {index + 1}

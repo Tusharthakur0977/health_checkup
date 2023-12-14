@@ -102,7 +102,7 @@ const PlanCard: React.FC<IPlanCard> = ({
             )}
           </button>
         )}
-        <StickyButton label="Selce a Plan" bgColor="#FCF5EC" color="#22577a" />
+        <StickyButton label="Selce a Plan"  color="#22577a" />
       </div>
       <Image
         src="/images/OFFERS.png"
