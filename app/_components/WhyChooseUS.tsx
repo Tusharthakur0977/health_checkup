@@ -32,10 +32,13 @@ const WhyChooseUS = () => {
   );
 
   return (
-    <div className="w-full sm:w-[95%] px-4 sm:px-6 py-7 sm:py-12 flex flex-col shadow-xl rounded-lg mb-3 gap-4 bg-gradient-to-br from-green-500 to-blue-800 custom-radial-gradient">
-      <p className="text-center font-bold text-xl sm:text:2xl text-white">
-        Why Choose ClearVikalp?
-      </p>
+    <div className="w-full sm:w-[95%] px-4 sm:px-6 py-7 sm:py-12 flex flex-col shadow-xl  mb-3 gap-4 bg-gradient-to-b from-[#22577a] to-cyan-600">
+      <div className="flex flex-col gap-1">
+        <p className="text-xl font-bold text-center text-white">
+          Why Choose <span className="text-white">ClearVikalp?</span>
+        </p>
+        <div className="h-1 w-[30%] self-center rounded-sm bg-cyan-500" />
+      </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-col gap-4">
           {WhyChooseUsData.map((item) => (

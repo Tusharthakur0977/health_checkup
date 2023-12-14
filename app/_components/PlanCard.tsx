@@ -6,6 +6,7 @@ import {
   MdKeyboardDoubleArrowUp,
 } from "react-icons/md";
 import StickyButton from "./StickyButton";
+import Image from "next/image";
 interface IPlanCard {
   name: string;
   title: string;
@@ -60,44 +61,57 @@ const PlanCard: React.FC<IPlanCard> = ({
   }, [isSwiped]);
 
   return (
-    <div
-      className={`flex min-h-[560px] flex-col p-6 justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
-    >
-      <h3 className=" text-xl sm:text-2xl text-white font-bold font-sans">
-        {name}
-      </h3>
-      {/* <p className="font-semibold w-full font-sans text-sm text-gray-300 sm:text-lg">
+    <>
+      <div
+        className={`flex min-h-[560px] flex-col p-6 justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
+      >
+        <h3 className=" text-2xl px-5 sm:text-2xl text-white font-bold font-sans">
+          {name}
+        </h3>
+        {/* <p className="font-semibold w-full font-sans text-sm text-gray-300 sm:text-lg">
         {title}
       </p> */}
-      <div className="flex text-white  justify-center items-center my-2">
-        <span className="mr-2 ms-1 text-2xl text-white font-bold">
-          ₹ {amount.withDiscount}
-        </span>
-        <span className="text-gray-400 line-through">
-          {amount.withoutDiscount}
-        </span>
-      </div>
-      <p className="font-medium font-serif self-center text-center mb-8 text-sm sm:text-lg px-4 rounded-2xl text-white bg-[#14AE70]">
-        Includes {test.length}+ Tests
-      </p>
 
-      <ul role="list" className="mb-4 text-left grid gap-4 grid-cols-2">
-        {renderTests}
-      </ul>
-      {test.length > 12 && (
-        <button
-          className="text-white font-semibold self-center py-2 underline cursor-pointer"
-          onClick={() => setShowmore(!showmore)}
-        >
-          {showmore ? (
-            <MdKeyboardDoubleArrowUp size="2rem" />
-          ) : (
-            <MdKeyboardDoubleArrowDown size="2rem" />
-          )}
-        </button>
-      )}
-      <StickyButton label="Selce a Plan" bgColor="#FCF5EC" color="#22577a" />
-    </div>
+        <div className="flex text-white  justify-center items-center my-2">
+          <p className=" px-3 py-1 rounded-lg text-white bg-[#EB1633] text-[9px] text-center">
+            {amount.discount}
+          </p>
+          <span className="mr-2 ms-1 text-xl text-white font-bold">
+            ₹ {amount.withDiscount}
+          </span>
+          <span className="text-gray-400 line-through">
+            {amount.withoutDiscount}
+          </span>
+        </div>
+        <p className="font-medium font-serif self-center text-center mb-8 text-sm sm:text-lg px-4 rounded-2xl text-white bg-[#14AE70]">
+          Includes {test.length}+ Tests
+        </p>
+
+        <ul role="list" className="mb-4 text-left grid gap-4 grid-cols-2">
+          {renderTests}
+        </ul>
+        {test.length > 12 && (
+          <button
+            className="text-white animate-bounce font-semibold self-center py-2 underline cursor-pointer"
+            onClick={() => setShowmore(!showmore)}
+          >
+            {showmore ? (
+              <MdKeyboardDoubleArrowUp size="2rem" />
+            ) : (
+              <MdKeyboardDoubleArrowDown size="2rem" />
+            )}
+          </button>
+        )}
+        <StickyButton label="Selce a Plan" bgColor="#FCF5EC" color="#22577a" />
+      </div>
+      <Image
+        src="/images/OFFERS.png"
+        className="absolute top-0"
+        alt=""
+        width={70}
+        height={20}
+      />
+    </>
   );
 };
 

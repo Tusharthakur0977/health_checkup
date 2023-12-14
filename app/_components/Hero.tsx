@@ -27,24 +27,37 @@ const Hero = () => {
           width={width! < 600 ? 140 : 130}
           height={50}
         />
-        <div className="flex items-center gap-1">
-          <p className="flex-1 text-lg sm:text-xl font-bold text-[#22577a] text-center px-1">
-            1234-123-456
-          </p>
-          <div className="bg-[#22577a] p-2 rounded-full">
+        <div className="flex items-center gap-1 flex-col">
+          <div className="bg-[#22577a] items-center flex gap-2 py-2 px-3 rounded-md">
+            <p className="text-white text-xs">Call Us at</p>
+
             <IoCall style={{ color: "white" }} />
           </div>
+          <p className="flex-1 sm:text-xl font-bold text-[#22577a] text-center px-1">
+            +91 8669988868
+          </p>
         </div>
       </div>
-      <p className="w-full text-lg p-3 text-center">
-        Be CLEAR on your health. Say YES to preventive health checkup
+      <p className="w-full text-xl p-3 font-extrabold text-center">
+        <span className="underline-offset-4 underline decoration-[#22577a]">
+          Be CLEAR on your health.
+        </span>{" "}
+        <span className="text-[#22577a] font-sans">
+          Say YES to preventive health checkup
+        </span>
       </p>
       <div className="w-full overflow-hidden px-3 py-3 sm:px-0  ">
         <Slider {...settings}>
-          <img src="/images/1.png" alt="" />
-          <img src="/images/2.png" alt="" />
-          <img src="/images/3.png" alt="" />
-          <img src="/images/4.png" alt="" />
+          <img
+            src="https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+            alt=""
+          />
+          <img
+            src="https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+            alt=""
+          />
+          {/* <img src="/images/3.png" alt="" /> */}
+          {/* <img src="/images/4.png" alt="" /> */}
         </Slider>
       </div>
 
@@ -58,10 +71,10 @@ const Hero = () => {
               src={card.img}
               className="p-1 -mt-1 mb-2"
               alt=""
-              width={width! < 600 ? 80 : 60}
-              height={width! < 600 ? 80 : 60}
+              width={width! < 600 ? 70 : 60}
+              height={width! < 600 ? 70 : 60}
             />
-            <h4 className="text-[14px] px-4 sm:text-xl text-center font-bold leading-snug tracking-tight mb-1 text-black">
+            <h4 className="text-[14px] text-[#22577a] px-4 sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
               {card.title}
             </h4>
           </div>

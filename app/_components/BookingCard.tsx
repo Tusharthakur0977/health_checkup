@@ -48,7 +48,7 @@ const BookingCard = () => {
         <p
           className={` ${isFormFilled ? "font-semibold" : "font-bold "} ${
             isFormFilled && "font-inter"
-          } text-center text-black text-lg sm:text-xl ${!isFormFilled && ""}`}
+          } text-center text-black text-xl sm:text-xl ${!isFormFilled && ""}`}
         >
           {isFormFilled ? (
             "Thank you for Booking your Call"
@@ -69,7 +69,7 @@ const BookingCard = () => {
           </button>
         )}
       </div>
-      <div className="h-[2px] w-[20%] mb-2 self-center bg-[#22577a]" />
+      <div className="h-[2px] w-[30%] -mt-1 mb-2 self-center bg-[#22577a]" />
 
       {isFormFilled ? (
         <div className="flex flex-col items-center gap-3">

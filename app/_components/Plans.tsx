@@ -34,10 +34,10 @@ const Plans = () => {
   );
 
   return (
-    <div className="w-full sm:w-[95%]  px-3 py-8 flex flex-col mt-5 gap-2">
+    <div className="w-full sm:w-[95%]  px-3 py-6 flex flex-col my-5 gap-2">
       <div className="flex gap-1 px-1 self-center">
         <RiDoubleQuotesL style={{ color: "#22577a" }} size="1.2rem" />
-        <p className="text-center font-semibold text-lg sm:text:xl text-[#22577a]">
+        <p className="text-center font-bold text-xl sm:text:xl text-[#22577a]">
           Your Health, Your Way <br /> Clearvikalp Plan Selection
         </p>
         <RiDoubleQuotesR style={{ color: "#22577a" }} size="1.2rem" />

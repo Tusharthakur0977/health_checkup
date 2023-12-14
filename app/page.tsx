@@ -11,18 +11,22 @@ import TopHeader from "./_components/TopHeader";
 import WhyChooseUS from "./_components/WhyChooseUS";
 import { BookModalContext } from "./_context/BookModalContext";
 import StepsJourney from "./_components/StepsJourney";
+import WhoWants from "./_components/WhoWants";
+import Accreditation from "./_components/Accreditation";
 
 export default function Home() {
   const { isBookModal, setIsBookModal } = React.useContext(BookModalContext);
 
   return (
-    <main className="flex flex-col justify-center items-center pb-10 bg-[#FCF5EC]">
+    <main className="flex flex-col justify-center items-center pb-10 bg-[#f4ede5]">
       <TopHeader />
       <Hero />
       <BookingCard />
       <Plans />
+      <WhoWants />
       <WhyChooseUS />
       <StepsJourney />
+      <Accreditation />
       <FAQ />
       <BookTestModal />
       <StickyButton
