@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import useWindowDimensions from "../_hooks/useWindowDimensions";
 
 const WhoWants = () => {
+  const { width } = useWindowDimensions();
+
   const WhoNeedData = [
     {
       title: "Preventive Health Checkup",
@@ -28,7 +33,7 @@ const WhoWants = () => {
         </p>
         <Image
           src="/images/whowantsImg.png"
-          width={window.innerWidth < 600 ? 170 : 350}
+          width={width! < 600 ? 170 : 350}
           className="rounded-2xl shadow-lg"
           height={100}
           alt=""
