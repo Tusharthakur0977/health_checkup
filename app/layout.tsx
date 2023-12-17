@@ -29,7 +29,7 @@ export default function RootLayout({
           integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
           crossOrigin="anonymous"
         ></script>
-        <title>React App</title>
+        <title>Clear Vikalp</title>
       </head>
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
