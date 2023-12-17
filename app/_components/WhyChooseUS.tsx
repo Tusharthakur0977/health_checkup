@@ -34,12 +34,12 @@ const WhyChooseUS = () => {
   return (
     <div className="w-full sm:w-[95%] px-4 sm:px-6 py-7 sm:py-12 flex flex-col shadow-xl  mb-3 gap-4 bg-gradient-to-b from-[#22577a] to-cyan-600">
       <div className="flex flex-col gap-1">
-        <p className="text-xl font-bold text-center text-white">
+        <p className="text-xl sm:text-2xl font-bold text-center text-white">
           Why Choose <span className="text-white">ClearVikalp?</span>
         </p>
-        <div className="h-1 w-[30%] self-center rounded-sm bg-cyan-500" />
+        <div className="h-1 w-[30%] sm:w-[10%] self-center rounded-sm bg-cyan-500" />
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col sm:justify-between sm:items-center md:flex-row gap-3">
         <div className="flex flex-col gap-4">
           {WhyChooseUsData.map((item) => (
             <div
@@ -53,20 +53,20 @@ const WhyChooseUS = () => {
                 width={40}
                 height={30}
               />
-              <p className="text-white flex-1 font-medium font-serif text-sm sm:text-xl text-left">
+              <p className="text-white flex-1 font-medium font-serif text-lg sm:text-lg text-left">
                 {item.title}
               </p>
             </div>
           ))}
         </div>
+        <Slider
+          autoplay
+          className="w-[90%] sm:w-[40%] self-center"
+          {...settings}
+        >
+          {renderReviews}
+        </Slider>
       </div>
-      <Slider
-        autoplay
-        className="w-[90%] sm:w-[70%] self-center m-0 "
-        {...settings}
-      >
-        {renderReviews}
-      </Slider>
       {/* <button className="self-center font-bold bg-white rounded-lg text-sm px-5 py-2.5 w-[70%] lg:w-[35%] shadow-lg sm:self-center text-center">
         Book Now
       </button> */}

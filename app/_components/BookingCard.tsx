@@ -42,20 +42,20 @@ const BookingCard = () => {
     <div
       className={`w-[95%] ${
         !isFormFilled && "bg-white border-1 border-[#22577a]"
-      } rounded-md flex flex-col px-4 py-6 justify-center gap-2 shadow-lg ring-1 ring-slate-900/10`}
+      } rounded-md flex flex-col px-4 py-6 sm:py-10 justify-center gap-2 shadow-lg ring-1 ring-slate-900/10`}
     >
       <div className="relative w-full px-3">
         <p
           className={` ${isFormFilled ? "font-semibold" : "font-bold "} ${
             isFormFilled && "font-inter"
-          } text-center text-black text-xl sm:text-xl ${!isFormFilled && ""}`}
+          } text-center text-black text-xl sm:text-2xl ${!isFormFilled && ""}`}
         >
           {isFormFilled ? (
             "Thank you for Booking your Call"
           ) : (
             <>
               Get a Call in{" "}
-              <span className="text-[#22577a] font-bold tracking-wide text-[20px]">
+              <span className="text-[#22577a] font-bold tracking-wide text-[20px] sm:text-2xl">
                 20 Mins
               </span>
             </>
@@ -69,7 +69,7 @@ const BookingCard = () => {
           </button>
         )}
       </div>
-      <div className="h-[2px] w-[30%] -mt-1 mb-2 self-center bg-[#22577a]" />
+      <div className="h-[2px] sm:h-[3px] w-[30%] sm:w-[10%] -mt-2 mb-2 self-center bg-[#22577a]" />
 
       {isFormFilled ? (
         <div className="flex flex-col items-center gap-3">
@@ -79,7 +79,7 @@ const BookingCard = () => {
           <Image src="/images/checklist.png" alt="" width={50} height={50} />
         </div>
       ) : (
-        <form className="flex flex-col" onSubmit={onSubmit}>
+        <form className="flex flex-col gap-2 sm:px-6" onSubmit={onSubmit}>
           <div className="flex flex-col md:flex-row">
             <input
               type="text"
@@ -106,31 +106,12 @@ const BookingCard = () => {
               onChange={handleChange}
             />
           </div>
-          {/* <div className="flex  items-center sm:self-center mb-4 mt-1 sm:mt-3">
-            <input
-              id="opt-in-for-whatsapp"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 mr-3 text-blue-600 bg-gray-100 border-gray-300 rounded"
-            />
-            <Image src="/images/whatsapp.png" alt="" width={20} height={20} />
-            <label
-              htmlFor="opt-in-for-whatsapp"
-              className="ms-1 text-sm font-medium text-white"
-            >
-              Opt in for whatsapp updates
-            </label>
-          </div> */}
+
           <StickyButton
             label="Request a Callback"
             bgColor="#22577a"
             color="white"
             extraClasses="w-full sm:w-[50%] lg:w-[35%] sm:self-center mt-3"
-            // disabled={
-            //   formData.location === "" ||
-            //   formData.name === "" ||
-            //   formData.phone === ""
-            // }
             type="submit"
           />
         </form>

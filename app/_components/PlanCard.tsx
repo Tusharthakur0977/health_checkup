@@ -63,7 +63,7 @@ const PlanCard: React.FC<IPlanCard> = ({
   return (
     <>
       <div
-        className={`flex min-h-[560px] flex-col p-6 justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
+        className={`relative flex min-h-[580px] flex-col p-6 justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
       >
         <h3 className=" text-2xl px-5 sm:text-2xl text-white font-bold font-sans">
           {name}
@@ -72,7 +72,7 @@ const PlanCard: React.FC<IPlanCard> = ({
         {title}
       </p> */}
 
-        <div className="flex text-white  justify-center items-center my-2">
+        <div className="flex text-white justify-center items-center my-4">
           <p className=" px-3 py-1 rounded-lg text-white bg-[#EB1633] text-[9px] text-center">
             {amount.discount}
           </p>
@@ -87,7 +87,10 @@ const PlanCard: React.FC<IPlanCard> = ({
           Includes {test.length}+ Tests
         </p>
 
-        <ul role="list" className="mb-4 text-left grid gap-4 grid-cols-2">
+        <ul
+          role="list"
+          className="mb-4 flex-1 text-left grid gap-4 grid-cols-2"
+        >
           {renderTests}
         </ul>
         {test.length > 12 && (
@@ -102,15 +105,15 @@ const PlanCard: React.FC<IPlanCard> = ({
             )}
           </button>
         )}
-        <StickyButton label="Selce a Plan"  color="#22577a" />
+        <StickyButton label="Selce a Plan" color="#22577a" />
+        <Image
+          src="/images/OFFERS.png"
+          className="absolute top-0 left-0"
+          alt=""
+          width={70}
+          height={20}
+        />
       </div>
-      <Image
-        src="/images/OFFERS.png"
-        className="absolute top-0"
-        alt=""
-        width={70}
-        height={20}
-      />
     </>
   );
 };

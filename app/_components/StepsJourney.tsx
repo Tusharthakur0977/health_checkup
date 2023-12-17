@@ -1,58 +1,84 @@
 import React from "react";
 import StepData from "../_data/StepsData";
-import Image from "next/image";
 
 const StepsJourney = () => {
+  const [activeIndex, setActiveIndex] = React.useState<number | null>(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const divs = document.querySelectorAll(".journy-card");
+
+      let foundVisible = false;
+
+      divs.forEach((div, index: number) => {
+        const rect = div.getBoundingClientRect();
+        const isMiddleVisible = rect.top <= window.innerHeight / 2;
+        if (isMiddleVisible) {
+          setActiveIndex(index);
+          foundVisible = true;
+        }
+      });
+
+      if (!foundVisible) {
+        setActiveIndex(-1);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="w-[100%] sm:w-[95%] flex flex-col my-10 items-center">
-      <p className="text-center text-[#22577a] font-semibold text-lg px-3 mb-4">
+      <p className="text-center text-[#22577a] font-semibold text-xl sm:text-2xl px-3 mb-4">
         Your Health Checkup journey with Clear Vikalp simplified in 4 Easy
         Steps.
       </p>
-      {StepData.map((steps, index) => (
-        <React.Fragment key={index}>
-          <div className="w-[90%] relative rounded-md p-3 shadow-2xl ring-1 bg-white  ring-slate-900/10">
-            <div className="flex items-center gap-6">
-              <p className="px-4 py-2 font-bold bg-[#38a3a5] text-white rounded-full">
-                {index + 1}
+      <div className="flex w-[90%] flex-col items-center">
+        {StepData.map((steps, index) => (
+          <React.Fragment key={index}>
+            <div
+              className={`w-[90%] md:w-[45%] ${
+                index % 2 === 0 ? "md:self-end" : "md:self-start"
+              } gap-4 relative rounded-2xl p-4 flex flex-col justify-between shadow-2xl ring-1 ring-slate-900/10 
+            journy-card ${activeIndex! >= index ? "active" : ""}
+            `}
+              style={{
+                backgroundColor: activeIndex! >= index ? "#22577a" : "white",
+                transition: "background-color 0.5s ease",
+              }}
+            >
+              <p
+                className={`text-lg text-center font-semibold ${
+                  activeIndex! >= index ? "text-white" : "text-[#22577a]"
+                }`}
+              >
+                {steps.title}
               </p>
-              <div className="flex flex-col">
-                <p className="text-sm font-semibold text-start text-[#38a3a5]">
-                  {steps.title}
-                </p>
-                <ul>
-                  {steps.subtitles.map((sub) => (
-                    <li
-                      key={sub}
-                      className="text-xs font-normal text-start list-disc"
-                    >
-                      {sub}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {index <= 2 && (
-                <Image
-                  src={
-                    index === 1
-                      ? "/images/dashed-arrow-inv.png"
-                      : "/images/dashed-arrow.png"
-                  }
-                  alt=""
-                  width={30}
-                  height={30}
-                  className={`w-auto h-auto absolute -bottom-10 ${
-                    index === 1 ? "-right-4" : "-left-4"
-                  }  `}
-                />
-              )}
+              <ul>
+                {steps.subtitles.map((sub) => (
+                  <li
+                    key={sub}
+                    className={`text-xs ${
+                      activeIndex! >= index ? "text-white" : "text-black"
+                    }  font-bold text-start sm:text-center mb-2`}
+                  >
+                    {sub}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-          {index + 1 < StepData.length && (
-            <div className="h-4 bg-[#22577a] self-center w-[2px]"></div>
-          )}
-        </React.Fragment>
-      ))}
+            {index + 1 < StepData.length && (
+              <div className="h-4 bg-[#22577a] self-center w-[2px]"></div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };

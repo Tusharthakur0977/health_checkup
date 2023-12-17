@@ -33,12 +33,12 @@ const Hero = () => {
 
             <IoCall style={{ color: "white" }} />
           </div>
-          <p className="flex-1 sm:text-xl font-bold text-[#22577a] text-center px-1">
+          <p className="flex-1 sm:text- font-bold text-[#22577a] text-center px-1">
             +91 8669988868
           </p>
         </div>
       </div>
-      <p className="w-full text-xl p-3 font-extrabold text-center">
+      <p className="w-full text-xl sm:text-2xl p-3 font-extrabold text-center">
         <span className="underline-offset-4 underline decoration-[#22577a]">
           Be CLEAR on your health.
         </span>{" "}
@@ -49,15 +49,37 @@ const Hero = () => {
       <div className="w-full overflow-hidden px-3 py-3 sm:px-0  ">
         <Slider {...settings}>
           <img
-            src="https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+            src={
+              width! < 600
+                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+                : "/images/1.png"
+            }
             alt=""
           />
           <img
-            src="https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+            src={
+              width! < 600
+                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+                : "/images/2.png"
+            }
             alt=""
           />
-          {/* <img src="/images/3.png" alt="" /> */}
-          {/* <img src="/images/4.png" alt="" /> */}
+          <img
+            src={
+              width! < 600
+                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+                : "/images/3.png"
+            }
+            alt=""
+          />
+          <img
+            src={
+              width! < 600
+                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
+                : "/images/4.png"
+            }
+            alt=""
+          />
         </Slider>
       </div>
 
@@ -74,7 +96,7 @@ const Hero = () => {
               width={width! < 600 ? 70 : 60}
               height={width! < 600 ? 70 : 60}
             />
-            <h4 className="text-[14px] text-[#22577a] px-4 sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
+            <h4 className="text-[14px] text-[#22577a] px-4 sm:px-10  sm:text-xl text-center font-bold leading-snug tracking-tight mb-1">
               {card.title}
             </h4>
           </div>

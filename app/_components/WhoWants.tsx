@@ -28,7 +28,7 @@ const WhoWants = () => {
   return (
     <div className="w-full sm:w-[95%] sm:justify-center sm:items-center mb-4 p-5 flex flex-col sm:flex-row">
       <div className="flex justify-between mb-5 sm:gap-3 sm:flex-col  items-center">
-        <p className="text-xl sm:text-3xl font-bold px-3 sm:px-20 text-left">
+        <p className="text-xl sm:text-3xl font-bold px-3 sm:px-10 text-left">
           Who Needs These <span className="text-[#22577a]">Packages?</span>
         </p>
         <Image
@@ -42,11 +42,11 @@ const WhoWants = () => {
 
       <div className="flex gap-3 sm:flex-col justify-between ">
         {WhoNeedData.map((item, i) => (
-          <div className="flex flex-col gap-2" key={item.title + i.toString()}>
-            <p className="text-gray-900 text-sm font-medium px-2">
+          <div className="flex flex-col gap-1" key={item.title + i.toString()}>
+            <p className="text-gray-900 underline decoration-[#22577a] underline-offset-2 text-sm sm:text-xl font-medium px-2">
               {item.title}
             </p>
-            <p className="text-gray-600 text-[10px] px-2 font-medium">
+            <p className="text-gray-500 text-[10px] px-2 sm:text-lg font-medium">
               {item.subTitle}
             </p>
           </div>

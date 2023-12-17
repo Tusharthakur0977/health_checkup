@@ -8,7 +8,7 @@ const FeatureData = [
     img: "/images/ft2.png",
   },
   {
-    title: "Up to 60% Discount",
+    title: "Get up to 60% Discount",
     img: "/images/ft3.png",
   },
   {

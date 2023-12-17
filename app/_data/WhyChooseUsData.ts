@@ -1,35 +1,19 @@
 const WhyChooseUsData = [
   {
-    title: "Free and Right Time Sample Collection",
+    title: "170+ Advanced Clinical Labs",
     image: "/images/on-time.png",
   },
   {
-    title: "Accurate and Digital Test Report",
+    title: "Competitive Pricing!",
     image: "/images/aim.png",
   },
   {
-    title: "Free Doctor Advice and Diet Consultation",
+    title: "Earn Cashback on Every Wellness Check!",
     image: "/images/medical-staff.png",
   },
   {
-    title: "Start with 24 Cities and Counting",
-    image: "/images/architecture-and-city.png",
-  },
-  {
-    title: "300% Money Back Gurantee",
-    image: "/images/sign.png",
-  },
-  {
-    title: "India's leading NABL, CAP, cretified Pathology Lab's Network",
-    image: "/images/validation.png",
-  },
-  {
-    title: "Professional and Trained Phlebotomist",
-    image: "/images/medical-team.png",
-  },
-  {
-    title: "Lowest Prica than all companies. It's Our Gurantee!",
-    image: "/images/low-cost.png",
+    title: "Your Health, Your Decision: The Power of Plan Comparisons.",
+    image: "/images/medical-staff.png",
   },
 ];
 export default WhyChooseUsData;

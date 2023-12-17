@@ -14,13 +14,13 @@ const ReviewCard: React.FC<IReviewCard> = ({ desc, image, name, rating }) => {
   const { width } = useWindowDimensions();
 
   return (
-    <div className="flex flex-col p-3 mt-8 self-center bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
+    <div className="flex flex-col p-3 mt-8 sm:mt-12 self-center bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
       <Image
         className="rounded-full absolute top-0 border-2 border-white"
         alt=""
         src={image}
-        width={width! < 567 ? 60 : 100}
-        height={width! < 567 ? 60 : 100}
+        width={width! < 567 ? 60 : 80}
+        height={width! < 567 ? 60 : 80}
       />
       <div className="flex flex-col">
         <RiDoubleQuotesL className="text-amber-500 " size="1.4rem" />

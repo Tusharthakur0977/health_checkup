@@ -15,13 +15,13 @@ const FAQ = () => {
 
   const handleOpen = (value: number) => setOpen(open === value ? 0 : value);
   return (
-    <div className="w-full bg-white sm:w-[90%] px-3 py-10 flex flex-col gap-4">
-      <div className="flex flex-col gap-1">
-        <p className="text-center font-semibold text-xl sm:text:xl ">
+    <div className="w-full bg-white sm:w-[95%] px-3 py-10 flex flex-col gap-4">
+      <div className="flex flex-col gap-1 mb-3">
+        <p className="text-center font-semibold text-xl sm:text:2xl ">
           Frequently Asked{" "}
           <span className="text-[#22577a] font-extrabold">Questions</span>
         </p>
-        <div className="h-1 w-[30%] self-center rounded-sm bg-[#22577a]" />
+        <div className="h-1 w-[30%] sm:w-[10%] self-center rounded-sm bg-[#22577a]" />
       </div>
       <div className="flex flex-col gap-4">
         {FaqData.map((faq, index) => (
