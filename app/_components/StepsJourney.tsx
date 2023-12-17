@@ -35,9 +35,11 @@ const StepsJourney = () => {
 
   return (
     <div className="w-[100%] sm:w-[95%] flex flex-col my-10 items-center">
-      <p className="text-center text-[#22577a] font-semibold text-xl sm:text-2xl px-3 mb-4">
-        Your Health Checkup journey with Clear Vikalp simplified in 4 Easy
-        Steps.
+      <p className="text-center text-black font-semibold text-xl sm:text-2xl px-3 mb-4">
+        Your Health Checkup journey with{" "}
+        <span className="text-[#22577a] font-extrabold ">Clear Vikalp</span>{" "}
+        simplified in{" "}
+        <span className="text-[#22577a] font-extrabold">4 Easy Steps.</span>
       </p>
       <div className="flex w-[90%] flex-col items-center">
         {StepData.map((steps, index) => (
