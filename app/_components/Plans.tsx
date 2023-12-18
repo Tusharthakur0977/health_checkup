@@ -27,6 +27,7 @@ const Plans = () => {
           name={plan.name}
           amount={plan.amount}
           test={plan.test}
+          noOfTest={plan.noOfTest}
           isSwiped={isSwiped}
         />
       )),

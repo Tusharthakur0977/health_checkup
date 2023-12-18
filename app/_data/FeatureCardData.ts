@@ -1,19 +1,19 @@
 const FeatureData = [
   {
     title: "Free Home Sample Collection",
-    img: "/images/ft1.png",
+    img: "/images/features/ft1.png",
   },
   {
     title: "100% Accurate Report in 24Hrs",
-    img: "/images/ft2.png",
+    img: "/images/features/ft2.png",
   },
   {
     title: "Get up to 60% Discount",
-    img: "/images/ft3.png",
+    img: "/images/features/ft3.png",
   },
   {
     title: " Globally Accredited Labs",
-    img: "/images/ft4.png",
+    img: "/images/features/ft4.png",
   },
 ];
 

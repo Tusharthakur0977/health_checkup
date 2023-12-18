@@ -16,16 +16,16 @@ const ReviewCard: React.FC<IReviewCard> = ({ desc, image, name, rating }) => {
   return (
     <div className="flex flex-col p-3 mt-8 sm:mt-12 self-center bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
       <Image
-        className="rounded-full absolute top-0 border-2 border-white"
+        className="rounded-full top-0 absolute"
         alt=""
         src={image}
-        width={width! < 567 ? 60 : 80}
-        height={width! < 567 ? 60 : 80}
+        width={width! < 567 ? 90 : 120}
+        height={width! < 567 ? 90 : 120}
       />
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-14">
         <RiDoubleQuotesL className="text-amber-500 " size="1.4rem" />
 
-        <p className="text-lg flex font-normal text-gray-700 text-center">
+        <p className="text-sm flex font-normal text-gray-700 text-center">
           {desc}
         </p>
         <RiDoubleQuotesR

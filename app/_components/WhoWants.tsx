@@ -46,7 +46,7 @@ const WhoWants = () => {
             <p className="text-gray-900 underline decoration-[#22577a] underline-offset-2 text-sm sm:text-xl font-medium px-2">
               {item.title}
             </p>
-            <p className="text-gray-500 text-[10px] px-2 sm:text-lg font-medium">
+            <p className="text-gray-500 text-[12px] px-2 sm:text-lg font-medium">
               {item.subTitle}
             </p>
           </div>

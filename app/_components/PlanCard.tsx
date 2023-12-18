@@ -17,6 +17,7 @@ interface IPlanCard {
     discount: string;
   };
   isSwiped: boolean;
+  noOfTest: string;
 }
 
 const PlanCard: React.FC<IPlanCard> = ({
@@ -25,6 +26,7 @@ const PlanCard: React.FC<IPlanCard> = ({
   amount,
   test,
   isSwiped,
+  noOfTest,
 }) => {
   const [showmore, setShowmore] = React.useState(!(test.length > 12));
 
@@ -46,7 +48,7 @@ const PlanCard: React.FC<IPlanCard> = ({
               clipRule="evenodd"
             ></path>
           </svg>
-          <span className="text-xs text-white font-semibold">{item}</span>
+          <span className="text-sm text-white font-semibold">{item}</span>
         </li>
       )),
     [displayedTests]
@@ -68,12 +70,12 @@ const PlanCard: React.FC<IPlanCard> = ({
         <h3 className=" text-2xl px-5 sm:text-2xl text-white font-bold font-sans">
           {name}
         </h3>
-        {/* <p className="font-semibold w-full font-sans text-sm text-gray-300 sm:text-lg">
-        {title}
-      </p> */}
+        <p className="font-semibold w-full font-sans text-sm text-gray-300 sm:text-lg">
+          {title}
+        </p>
 
         <div className="flex text-white justify-center items-center my-4">
-          <p className=" px-3 py-1 rounded-lg text-white bg-[#EB1633] text-[9px] text-center">
+          <p className=" px-3 py-1 rounded-lg text-white bg-[#EB1633] text-[12px] text-center">
             {amount.discount}
           </p>
           <span className="mr-2 ms-1 text-xl text-white font-bold">
@@ -84,7 +86,7 @@ const PlanCard: React.FC<IPlanCard> = ({
           </span>
         </div>
         <p className="font-medium font-serif self-center text-center mb-8 text-sm sm:text-lg px-4 rounded-2xl text-white bg-[#14AE70]">
-          Includes {test.length}+ Tests
+          Includes {noOfTest}+ Tests
         </p>
 
         <ul

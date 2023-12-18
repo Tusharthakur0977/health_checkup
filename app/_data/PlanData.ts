@@ -1,13 +1,13 @@
 const PlanData = [
   {
     name: "Clearvikalp Wellness Basic",
-    title:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus,",
+    title: "Heart, Diabetes, Liver, Kidney, Infection, screening",
     amount: {
       withDiscount: "1399",
       withoutDiscount: "4000",
       discount: "65% off",
     },
+    noOfTest: "50",
     test: [
       "CBC",
       "Blood Group",
@@ -19,18 +19,19 @@ const PlanData = [
       "SGOT",
       "SGPT",
       "Serum Electrolytes",
-      "Lipid Profile (HDL/LDL/Total chol/Triglyceride/VLDL)",
+      "Lipid Profile",
     ],
   },
   {
     name: "Clearvikalp Wellness Plus",
     title:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus,",
+      "Heart, Diabetes, Liver, Kidney, Infection screening, Vitamin screening",
     amount: {
       withDiscount: "2999",
-      withoutDiscount: "7555",
+      withoutDiscount: "8500",
       discount: "61% off",
     },
+    noOfTest: "60",
     test: [
       "CBC",
       "ESR",
@@ -42,7 +43,7 @@ const PlanData = [
       "FBS",
       "PPBS",
       "Serum Creatinine",
-      "Lipid Profile (HDL/LDL/Total chol/Triglyceride/VLDL)",
+      "Lipid Profile",
       "Serum Electrolytes",
       "Serum Uric Acid",
       "BUN",
@@ -59,13 +60,13 @@ const PlanData = [
   {
     name: "Clearvikalp Wellness Pro",
     title:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus,",
+      "Heart, Diabetes, Liver, Kidney, Infection screening, Vitamin screening, Thyroid, Prostate screening, HIV screening",
     amount: {
       withDiscount: "3499",
-      withoutDiscount: "10500",
-      discount: "67% off",
+      withoutDiscount: "10000",
+      discount: "65% off",
     },
-
+    noOfTest: "75",
     test: [
       "CBC",
       "ESR",
@@ -85,7 +86,7 @@ const PlanData = [
       "Hba1c",
       "Hbsag",
       "HIV I & II",
-      "Prostate Surface Antigen (PSA)",
+      "Prostate Surface Antigen",
       "Albumin",
       "Alkaline Phosphatase",
       "Bilirubin",
