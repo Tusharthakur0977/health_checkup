@@ -11,6 +11,7 @@ interface IStickyButton {
   onClick?: () => void;
   disabled?: boolean;
   type?: "button" | "submit";
+  isLoading?: boolean;
 }
 
 const StickyButton: React.FC<IStickyButton> = ({
@@ -22,6 +23,7 @@ const StickyButton: React.FC<IStickyButton> = ({
   onClick,
   disabled,
   type,
+  isLoading,
 }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -52,7 +54,7 @@ const StickyButton: React.FC<IStickyButton> = ({
         isSticky && isVisible && "fixed bottom-2 mx-auto"
       } ${disabled && "opacity-70 cursor-not-allowed"} `}
     >
-      {label}
+      {isLoading ? "Loaidng " : label}
     </button>
   );
 };

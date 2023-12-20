@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import {
   MdKeyboardDoubleArrowDown,
   MdKeyboardDoubleArrowUp,
 } from "react-icons/md";
 import StickyButton from "./StickyButton";
 import Image from "next/image";
+import { BookModalContext } from "../_context/BookModalContext";
 interface IPlanCard {
   name: string;
   title: string;
@@ -29,7 +30,7 @@ const PlanCard: React.FC<IPlanCard> = ({
   noOfTest,
 }) => {
   const [showmore, setShowmore] = React.useState(!(test.length > 12));
-
+  const { setSelectedPLan, setIsBookModal } = useContext(BookModalContext);
   const displayedTests = showmore ? test : test.slice(0, 12);
 
   const renderTests = React.useMemo(
@@ -109,7 +110,15 @@ const PlanCard: React.FC<IPlanCard> = ({
             </button>
           )}
         </div>
-        <StickyButton label="Selce a Plan" color="#22577a" />
+        <StickyButton
+          label="Select a Plan"
+          color="#22577a"
+          onClick={() => {
+            setIsBookModal(true);
+
+            setSelectedPLan(name);
+          }}
+        />
         <Image
           src="/images/discount.png"
           className="absolute top-0 left-0"
