@@ -45,9 +45,10 @@ const StickyButton: React.FC<IStickyButton> = ({
       type={type || "button"}
       disabled={disabled}
       onClick={onClick}
-      className={`text-${color}  font-bold ${
-        bgColor ? "bg-[" + bgColor + "]" : "bg-white"
-      } ${extraClasses} hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 rounded-lg text-sm px-5 py-2.5 text-center ${
+      style={{
+        backgroundColor: bgColor ? `${bgColor}` : "white",
+      }}
+      className={`text-${color}  font-bold ${extraClasses} hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 rounded-lg text-sm px-5 py-2.5 text-center ${
         isSticky && isVisible && "fixed bottom-2 mx-auto"
       } ${disabled && "opacity-70 cursor-not-allowed"} `}
     >
