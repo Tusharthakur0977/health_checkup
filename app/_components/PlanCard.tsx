@@ -95,21 +95,23 @@ const PlanCard: React.FC<IPlanCard> = ({
         >
           {renderTests}
         </ul>
-        {test.length > 12 && (
-          <button
-            className="text-white animate-bounce font-semibold self-center py-2 underline cursor-pointer"
-            onClick={() => setShowmore(!showmore)}
-          >
-            {showmore ? (
-              <MdKeyboardDoubleArrowUp size="2rem" />
-            ) : (
-              <MdKeyboardDoubleArrowDown size="2rem" />
-            )}
-          </button>
-        )}
+        <div className="min-h-[55px]">
+          {test.length > 12 && (
+            <button
+              className="text-white animate-bounce font-semibold self-center py-2 underline cursor-pointer"
+              onClick={() => setShowmore(!showmore)}
+            >
+              {showmore ? (
+                <MdKeyboardDoubleArrowUp size="2rem" />
+              ) : (
+                <MdKeyboardDoubleArrowDown size="2rem" />
+              )}
+            </button>
+          )}
+        </div>
         <StickyButton label="Selce a Plan" color="#22577a" />
         <Image
-          src="/images/OFFERS.png"
+          src="/images/discount.png"
           className="absolute top-0 left-0"
           alt=""
           width={70}

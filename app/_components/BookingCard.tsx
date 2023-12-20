@@ -41,7 +41,7 @@ const BookingCard = () => {
   return (
     <div
       className={`w-[95%] ${
-        !isFormFilled && "bg-white border-1 border-[#22577a]"
+        !isFormFilled && "bg-white border border-[#22577a]"
       } rounded-md flex flex-col px-4 py-6 sm:py-10 justify-center gap-2 shadow-lg ring-1 ring-slate-900/10`}
     >
       <div className="relative w-full px-3">
