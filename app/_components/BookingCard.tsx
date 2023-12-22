@@ -7,8 +7,13 @@ import { BookModalContext } from "../_context/BookModalContext";
 import StickyButton from "./StickyButton";
 
 const BookingCard = () => {
-  const { isBookModal, setIsBookModal, isFormFilled, setIsFormFilled } =
-    React.useContext(BookModalContext);
+  const {
+    isBookModal,
+    setIsBookModal,
+    isFormFilled,
+    setIsFormFilled,
+    selectedPLan,
+  } = React.useContext(BookModalContext);
 
   const [formData, setFormData] = React.useState({
     name: "",
@@ -65,6 +70,7 @@ const BookingCard = () => {
           name: formData.name,
           phone: formData.phone,
           location: formData.location,
+          plan: selectedPLan,
         }),
       })
         .then((res) => {

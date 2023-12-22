@@ -114,9 +114,8 @@ const PlanCard: React.FC<IPlanCard> = ({
           label="Select a Plan"
           color="#22577a"
           onClick={() => {
-            setIsBookModal(true);
-
             setSelectedPLan(name);
+            setIsBookModal(true);
           }}
         />
         <Image

@@ -5,6 +5,7 @@ type SheetForm = {
   name: string;
   phone: number;
   location?: string;
+  plan?: string;
 };
 
 export async function POST(request: Request) {
@@ -13,7 +14,7 @@ export async function POST(request: Request) {
 
   try {
     const auth = new google.auth.GoogleAuth({
-      projectId: "landing-page-408717",
+      projectId: "clearvikalp-landing-page",
       credentials: {
         client_email: process.env.CLIENT_EMAIL,
         private_key: process.env.CLIENT_PRIVATE_KEY?.replace(/\\n/g, "\n"),
@@ -32,7 +33,14 @@ export async function POST(request: Request) {
       range: "Sheet1!A:B",
       valueInputOption: "USER_ENTERED",
       requestBody: {
-        values: [[body.name || "", body.phone || "", body.location || ""]],
+        values: [
+          [
+            body.name || "",
+            body.phone || "",
+            body.location || "",
+            body.plan || " ",
+          ],
+        ],
       },
     });
 

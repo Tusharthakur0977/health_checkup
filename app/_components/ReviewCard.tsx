@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import useWindowDimensions from "../_hooks/useWindowDimensions";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import useWindowDimensions from "../_hooks/useWindowDimensions";
 
 interface IReviewCard {
   name: string;
@@ -12,7 +12,6 @@ interface IReviewCard {
 
 const ReviewCard: React.FC<IReviewCard> = ({ desc, image, name, rating }) => {
   const { width } = useWindowDimensions();
-
   return (
     <div className="flex flex-col p-3 mt-8 sm:mt-12 self-center bg-white items-center sm:p-5 gap-3 shadow-xl rounded-md">
       <Image
