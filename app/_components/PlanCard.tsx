@@ -66,7 +66,7 @@ const PlanCard: React.FC<IPlanCard> = ({
   return (
     <>
       <div
-        className={`relative flex min-h-[580px] flex-col p-6 justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
+        className={`relative flex min-h-[580px] flex-col p-6  justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
       >
         <h3 className=" text-2xl px-5 sm:text-2xl text-white font-bold font-sans">
           {name}
