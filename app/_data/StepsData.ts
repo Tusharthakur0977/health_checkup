@@ -2,7 +2,7 @@ const StepData = [
   {
     title: "Request a Call",
     subtitles: [
-      "Start your health journey by requesting a call from us.",
+      "Start your health journey by requesting a callBack.",
       "Our friendly staff will guide you through the process.",
     ],
   },

@@ -8,11 +8,11 @@ const FeatureData = [
     img: "/images/features/ft2.png",
   },
   {
-    title: "Get up to 60% Discount",
+    title: "Get up to 86% Discount",
     img: "/images/features/ft3.png",
   },
   {
-    title: " Globally Accredited Labs",
+    title: "ISO, CAP & NABL Certified",
     img: "/images/features/ft4.png",
   },
 ];

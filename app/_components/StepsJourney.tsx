@@ -62,13 +62,13 @@ const StepsJourney = () => {
               >
                 {steps.title}
               </p>
-              <ul>
+              <ul className="px-2">
                 {steps.subtitles.map((sub) => (
                   <li
                     key={sub}
                     className={`text-xs ${
                       activeIndex! >= index ? "text-white" : "text-black"
-                    }  font-bold text-start sm:text-center mb-2`}
+                    }  font-bold text-start sm:text-center mb-2 list-disc`}
                   >
                     {sub}
                   </li>

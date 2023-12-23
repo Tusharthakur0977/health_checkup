@@ -12,6 +12,7 @@ interface IStickyButton {
   disabled?: boolean;
   type?: "button" | "submit";
   isLoading?: boolean;
+  id: string;
 }
 
 const StickyButton: React.FC<IStickyButton> = ({
@@ -24,6 +25,7 @@ const StickyButton: React.FC<IStickyButton> = ({
   disabled,
   type,
   isLoading,
+  id,
 }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -44,6 +46,7 @@ const StickyButton: React.FC<IStickyButton> = ({
 
   return (
     <button
+      id={id}
       type={type || "button"}
       disabled={disabled}
       onClick={onClick}

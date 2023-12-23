@@ -18,7 +18,7 @@ export default function Home() {
   const { isBookModal, setIsBookModal } = React.useContext(BookModalContext);
 
   return (
-    <main className="flex flex-col justify-center items-center pb-10 bg-[#f4ede5]">
+    <main className="flex flex-col justify-center items-center pb-10 bg-[#f1ede8]">
       <TopHeader />
       <Hero />
       <BookingCard />
@@ -30,6 +30,7 @@ export default function Home() {
       <FAQ />
       <BookTestModal />
       <StickyButton
+        id="sticky_request_call_back"
         label="Request a Callback"
         bgColor="#ff9800"
         color="white"

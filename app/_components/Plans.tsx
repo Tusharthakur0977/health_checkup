@@ -29,6 +29,8 @@ const Plans = () => {
           test={plan.test}
           noOfTest={plan.noOfTest}
           isSwiped={isSwiped}
+          id={plan.id}
+          btnId={plan.btnid}
         />
       )),
     [isSwiped]

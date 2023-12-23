@@ -9,6 +9,7 @@ import StickyButton from "./StickyButton";
 import Image from "next/image";
 import { BookModalContext } from "../_context/BookModalContext";
 interface IPlanCard {
+  id: string;
   name: string;
   title: string;
   test: string[];
@@ -19,9 +20,12 @@ interface IPlanCard {
   };
   isSwiped: boolean;
   noOfTest: string;
+  btnId: string;
 }
 
 const PlanCard: React.FC<IPlanCard> = ({
+  id,
+  btnId,
   name,
   title,
   amount,
@@ -66,7 +70,8 @@ const PlanCard: React.FC<IPlanCard> = ({
   return (
     <>
       <div
-        className={`relative flex min-h-[580px] flex-col p-6  justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
+        id={id}
+        className={`plan_banner relative flex min-h-[580px] flex-col p-6  justify-between sm:mx-auto sm:max-w-lg text-center text-gray-900 bg-[#22577a] rounded-lg`}
       >
         <h3 className=" text-2xl px-5 sm:text-2xl text-white font-bold font-sans">
           {name}
@@ -111,6 +116,7 @@ const PlanCard: React.FC<IPlanCard> = ({
           )}
         </div>
         <StickyButton
+          id={btnId}
           label="Select a Plan"
           color="#22577a"
           onClick={() => {

@@ -26,7 +26,8 @@ const FAQ = () => {
       <div className="flex flex-col gap-4">
         {FaqData.map((faq, index) => (
           <Accordion
-            className={`w-full sm:w-[80%]  ${
+            id={faq.id}
+            className={`faq_button w-full sm:w-[80%]  ${
               open === index + 1 ? "bg-[#22577a]" : "bg-[#caf0f8]"
             }   sm:self-center shadow-md rounded-t-md ${
               open === index + 1 && "rounded-b-md"
@@ -35,7 +36,8 @@ const FAQ = () => {
             key={faq.title}
           >
             <AccordionHeader
-              className="p-3 flex justify-between items-center gap-4  "
+              id={open === index + 1 ? "collapse" : "expand"}
+              className="p-3 flex justify-between items-center gap-4 "
               onClick={() => handleOpen(index + 1)}
             >
               <p
@@ -47,7 +49,8 @@ const FAQ = () => {
               </p>
               {open === index + 1 ? (
                 <HiMiniMinusCircle
-                  className="rounded-full"
+                  id="collapse"
+                  className="rounded-full "
                   style={{
                     height: 30,
                     width: 30,
@@ -56,6 +59,7 @@ const FAQ = () => {
                 />
               ) : (
                 <HiPlusCircle
+                  id="expand"
                   className="bg-[#caf0f8] rounded-full"
                   style={{
                     height: 25,

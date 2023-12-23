@@ -11,7 +11,7 @@ const Hero = () => {
   const { width } = useWindowDimensions();
   const settings = {
     dots: false,
-    autoplay: true,
+    autoplay: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -46,41 +46,17 @@ const Hero = () => {
           Say YES to preventive health checkup
         </span>
       </p>
-      <div className="w-full overflow-hidden px-3 py-3 sm:px-0  ">
-        <Slider {...settings}>
-          <img
-            src={
-              width! < 600
-                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
-                : "/images/1.png"
-            }
-            alt=""
-          />
-          <img
-            src={
-              width! < 600
-                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
-                : "/images/2.png"
-            }
-            alt=""
-          />
-          <img
-            src={
-              width! < 600
-                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
-                : "/images/3.png"
-            }
-            alt=""
-          />
-          <img
-            src={
-              width! < 600
-                ? "https://www.metropolisindia.com/newdata/images/new-lp-man-family.png"
-                : "/images/4.png"
-            }
-            alt=""
-          />
-        </Slider>
+      <div className="w-full overflow-hidden py-3 sm:px-0  ">
+        {width! < 600 ? (
+          <img src="/images/banner/creative.png" width={"100%"} alt="" />
+        ) : (
+          <Slider {...settings}>
+            <img src="/images/1.png" alt="" />
+            <img src="/images/2.png" alt="" />
+            <img src="/images/3.png" alt="" />
+            <img src="/images/4.png" alt="" />
+          </Slider>
+        )}
       </div>
 
       <div className="w-full grid gap-4 grid-cols-2 lg:grid-cols-4 md:max-w-2xl lg:max-w-none px-3 py-3 sm:px-0 sm:py-5">

@@ -1,6 +1,6 @@
 const WhyChooseUsData = [
   {
-    title: "170+ Advanced Clinical Labs",
+    title: "170+ Advanced Certified Labs",
     image: "/images/whyChooseUs/flask.png",
   },
   {
@@ -8,12 +8,12 @@ const WhyChooseUsData = [
     image: "/images/whyChooseUs/price-tag.png",
   },
   {
-    title: "Earn Cashback on Every Wellness Check!",
+    title: "Earn Cashback on Each Transaction via App",
     image: "/images/whyChooseUs/refund.png",
   },
   {
-    title: "Your Health, Your Decision: The Power of Plan Comparisons.",
-    image: "/images/whyChooseUs/flask.png",
+    title: "Multiple Healthcare Option on a Single Platform",
+    image: "/images/whyChooseUs/platform.png",
   },
 ];
 export default WhyChooseUsData;

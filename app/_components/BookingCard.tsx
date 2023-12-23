@@ -6,6 +6,10 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { BookModalContext } from "../_context/BookModalContext";
 import StickyButton from "./StickyButton";
 
+interface CustomWindow extends Window {
+  dataLayer: any[]; // You might want to define a specific type for your dataLayer items
+}
+
 const BookingCard = () => {
   const {
     isBookModal,
@@ -64,6 +68,10 @@ const BookingCard = () => {
     e.preventDefault();
     setIsLoading(true);
     if (validateForm()) {
+      (window as unknown as CustomWindow).dataLayer.push({
+        event: "form_submit",
+        card_type: isBookModal ? "popup_card" : "top-card",
+      });
       await fetch("/api/submitdetails", {
         method: "POST",
         body: JSON.stringify({
@@ -101,9 +109,9 @@ const BookingCard = () => {
             "Thank you for Booking your Call"
           ) : (
             <>
-              Get a Call in{" "}
+              Get a Quick{" "}
               <span className="text-[#22577a] font-bold tracking-wide text-[20px] sm:text-2xl">
-                20 Mins
+                CallBack
               </span>
             </>
           )}
@@ -151,7 +159,7 @@ const BookingCard = () => {
               value={formData.phone}
               onChange={handleChange}
             />
-            {errors.name && (
+            {errors.phone && (
               <p className="text-red-500 font-semibold text-sm pb-2">
                 {errors.phone}
               </p>
@@ -167,12 +175,13 @@ const BookingCard = () => {
           </div>
 
           <StickyButton
+            id={isBookModal ? "pop_up_booking_card" : "top_booking_card"}
             label="Request a Callback"
             bgColor="#22577a"
             color="white"
             extraClasses="w-full sm:w-[50%] lg:w-[35%] sm:self-center mt-3"
             type="submit"
-            isLoading={isLoading}
+            // isLoading={isLoading}
           />
         </form>
       )}
