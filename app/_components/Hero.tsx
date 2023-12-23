@@ -48,7 +48,7 @@ const Hero = () => {
       </p>
       <div className="w-full overflow-hidden py-3 sm:px-0  ">
         {width! < 600 ? (
-          <img src="/images/banner/creative.png" width={"100%"} alt="" />
+          <img src="/images/banner/creative.jpg" width={"100%"} alt="" />
         ) : (
           <Slider {...settings}>
             <img src="/images/1.png" alt="" />
