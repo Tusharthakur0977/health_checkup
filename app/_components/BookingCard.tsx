@@ -69,7 +69,7 @@ const BookingCard = () => {
     setIsLoading(true);
     if (validateForm()) {
       (window as unknown as CustomWindow).dataLayer.push({
-        event: "form_submit",
+        event: "booking_card_submit",
         card_type: isBookModal ? "popup_card" : "top-card",
       });
       await fetch("/api/submitdetails", {
