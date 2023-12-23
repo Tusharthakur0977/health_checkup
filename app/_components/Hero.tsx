@@ -28,11 +28,14 @@ const Hero = () => {
           height={50}
         />
         <div className="flex items-center gap-1 flex-col">
-          <div className="bg-[#22577a] items-center flex gap-2 py-2 px-3 rounded-md">
+          <a
+            href="tel:8669988868"
+            className="bg-[#22577a] items-center flex gap-2 py-2 px-3 rounded-md"
+          >
             <p className="text-white text-xs">Call Us at</p>
 
             <IoCall style={{ color: "white" }} />
-          </div>
+          </a>
           <p className="flex-1 sm:text- font-bold text-[#22577a] text-center px-1">
             +91 8669988868
           </p>
