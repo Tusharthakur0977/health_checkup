@@ -6,7 +6,8 @@ const Accreditation = () => {
     <div className="w-full sm:w-[95%] p-8 flex flex-col gap-4 bg-white">
       <div className="flex flex-col gap-1 mb-3">
         <p className="text-xl sm:text-2xl font-bold text-center">
-          Our <span className="text-[#22577a]">Accreditation</span>
+          Our Partner&apos;s{" "}
+          <span className="text-[#22577a]">Accreditation</span>
         </p>
         <div className="h-1 w-[30%] sm:w-[10%] self-center rounded-sm bg-[#22577a]" />
       </div>

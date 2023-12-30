@@ -11,6 +11,7 @@ type SheetForm = {
 export async function POST(request: Request) {
   const body = (await request.json()) as SheetForm;
   const spreadsheetId = process.env.CLIENT_SPREADSHEET_ID;
+  const date = new Date();
 
   try {
     const auth = new google.auth.GoogleAuth({
@@ -38,7 +39,9 @@ export async function POST(request: Request) {
             body.name || "",
             body.phone || "",
             body.location || "",
-            body.plan || " ",
+            body.plan || "",
+            date.toLocaleDateString(),
+            date.toLocaleTimeString(),
           ],
         ],
       },
