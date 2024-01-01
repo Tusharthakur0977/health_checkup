@@ -52,13 +52,13 @@ const Hero = () => {
       </p>
       <div className="w-full overflow-hidden py-3 sm:px-0  ">
         {width! < 600 ? (
-          <img src="/images/banner/creative.jpg" width={"100%"} alt="" />
+          <img src="/images/banner/creat0ive.jpg" width={"100%"} alt="" />
         ) : (
           <Slider {...settings}>
-            <img src="/images/1.png" alt="" />
-            <img src="/images/2.png" alt="" />
-            <img src="/images/3.png" alt="" />
-            <img src="/images/4.png" alt="" />
+            <img src="/images/banner/1.png" alt="" />
+            <img src="/images/banner/2.png" alt="" />
+            <img src="/images/banner/3.png" alt="" />
+            <img src="/images/banner/4.png" alt="" />
           </Slider>
         )}
       </div>
