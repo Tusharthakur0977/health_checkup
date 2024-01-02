@@ -1,22 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
-import Slider from "react-slick";
-import useWindowDimensions from "../_hooks/useWindowDimensions";
 import { IoCall } from "react-icons/io5";
 import FeatureData from "../_data/FeatureCardData";
+import useWindowDimensions from "../_hooks/useWindowDimensions";
 
 const Hero = () => {
   const { width } = useWindowDimensions();
-  const settings = {
-    dots: false,
-    autoplay: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
   return (
     <div className="w-[100%] sm:w-[95%] flex flex-col mb-4">
@@ -52,14 +42,9 @@ const Hero = () => {
       </p>
       <div className="w-full overflow-hidden py-3 sm:px-0  ">
         {width! < 600 ? (
-          <img src="/images/banner/creat0ive.jpg" width={"100%"} alt="" />
+          <img src="/images/banner/creative.jpg" width={"100%"} alt="" />
         ) : (
-          <Slider {...settings}>
-            <img src="/images/banner/1.png" alt="" />
-            <img src="/images/banner/2.png" alt="" />
-            <img src="/images/banner/3.png" alt="" />
-            <img src="/images/banner/4.png" alt="" />
-          </Slider>
+          <img src="/images/banner/desktop-banner.jpg" width={"100%"} alt="" />
         )}
       </div>
 
