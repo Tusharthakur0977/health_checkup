@@ -5,7 +5,7 @@ const PlanData = [
     name: "Clearvikalp Wellness Basic",
     title: "Heart, Diabetes, Liver, Kidney, Infection, screening",
     amount: {
-      withDiscount: "1399",
+      withDiscount: "1599",
       withoutDiscount: "4000",
       discount: "65% off",
     },
