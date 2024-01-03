@@ -6,7 +6,7 @@ const PlanData = [
     title: "Heart, Diabetes, Liver, Kidney, Infection, screening",
     amount: {
       withDiscount: "1599",
-      withoutDiscount: "4000",
+      withoutDiscount: "4569",
       discount: "65% off",
     },
     noOfTest: "50",
