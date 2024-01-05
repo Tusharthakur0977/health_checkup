@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { BookModalContext } from "../_context/BookModalContext";
 import StickyButton from "./StickyButton";
@@ -30,7 +30,6 @@ const BookingCard = () => {
     phone: "",
   });
 
-  const [isLoading, setIsLoading] = useState(false);
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setFormData({
       ...formData,
@@ -66,7 +65,6 @@ const BookingCard = () => {
 
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    setIsLoading(true);
     if (validateForm()) {
       (window as unknown as CustomWindow).dataLayer.push({
         event: "booking_card_submit",
@@ -89,7 +87,6 @@ const BookingCard = () => {
         .catch((err) => {
           console.log(err);
         })
-        .finally(() => setIsLoading(false));
     }
   };
 

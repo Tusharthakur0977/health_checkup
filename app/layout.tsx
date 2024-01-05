@@ -1,17 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Script from "next/script";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import BookModalProvider from "./_context/BookModalContext";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+// import Script from "next/script";
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import BookModalProvider from './_context/BookModalContext';
+import './globals.css';
+import { GoogleTagManager } from '@next/third-parties/google';
 
-const inter = Inter({ subsets: ["latin"] });
-const GTM_ID = "GTM-WPWDT5RS";
+const inter = Inter({ subsets: ['latin'] });
+const GTM_ID = 'GTM-WPWDT5RS';
 
 export const metadata: Metadata = {
-  title: "Clear Vikalp",
-  description: "",
+  title: 'Clear Vikalp',
+  description: '',
 };
 
 export default function RootLayout({
@@ -20,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel='manifest' href='%PUBLIC_URL%/manifest.json' />
         <script
           async
           src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -31,7 +32,7 @@ export default function RootLayout({
         ></script>
         <title>Clear Vikalp</title>
       </head>
-      <Script id="google-tag-manager" strategy="afterInteractive">
+      {/* <Script id="google-tag-manager" strategy="afterInteractive">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -39,15 +40,16 @@ export default function RootLayout({
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','${GTM_ID}');
         `}
-      </Script>
-      <body suppressHydrationWarning={true} className={`${inter.className}`}>
-        <noscript
+      </Script> */}
+      <body suppressHydrationWarning={true} >
+        {/* <noscript
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display: none; visibility: hidden;"></iframe>`,
           }}
-        />
+        /> */}
         <BookModalProvider>{children}</BookModalProvider>
       </body>
+      <GoogleTagManager gtmId={GTM_ID} />
     </html>
   );
 }

@@ -8,7 +8,6 @@ import BookTestModal from "./_components/Modals/BookTestModal";
 import Plans from "./_components/Plans";
 import StickyButton from "./_components/StickyButton";
 import TopHeader from "./_components/TopHeader";
-import WhyChooseUS from "./_components/WhyChooseUS";
 import { BookModalContext } from "./_context/BookModalContext";
 import StepsJourney from "./_components/StepsJourney";
 import WhoWants from "./_components/WhoWants";
@@ -24,7 +23,6 @@ export default function Home() {
       <BookingCard />
       <Plans />
       <WhoWants />
-      <WhyChooseUS />
       <StepsJourney />
       <Accreditation />
       <FAQ />
