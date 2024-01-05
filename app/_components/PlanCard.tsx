@@ -104,17 +104,18 @@ const PlanCard: React.FC<IPlanCard> = ({
         <div className="min-h-[55px]">
           {test.length > 12 && (
             <button
-              className="text-white animate-bounce font-semibold self-center py-2 underline cursor-pointer"
+              className="text-white font-semibold self-center py-2 underline cursor-pointer"
               onClick={() => setShowmore(!showmore)}
             >
-              {showmore ? (
-                <MdKeyboardDoubleArrowUp size="2rem" />
-              ) : (
-                <MdKeyboardDoubleArrowDown size="2rem" />
-              )}
+              {showmore ? "Show Less" : "Show More"}
             </button>
           )}
         </div>
+        <MdKeyboardDoubleArrowDown
+          size="2rem"
+          className="self-center text-white mb-4 animate-bounce"
+        />
+
         <StickyButton
           id={btnId}
           label="Select a Plan"

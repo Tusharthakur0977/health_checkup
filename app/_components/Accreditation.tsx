@@ -13,14 +13,20 @@ const Accreditation = () => {
       </div>
 
       <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 justify-items-center">
-        <Image loading="eager" src="/images/cap.jpg" alt="" width={200} height={100} />
+        <Image
+          loading="eager"
+          src="/images/cap.jpg"
+          alt=""
+          width={200}
+          height={100}
+        />
         <Image src="/images/ISO.jpg" alt="" width={1070} height={670} />
         <Image
           src="/images/NABL.png"
           alt=""
           className="col-span-2 sm:col-span-1"
-          width={261}
-          height={300}
+          width={100}
+          height={100}
         />
       </div>
     </div>
