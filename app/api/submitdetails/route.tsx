@@ -6,6 +6,8 @@ type SheetForm = {
   phone: number;
   location?: string;
   plan?: string;
+  date?: string;
+  time?: string;
 };
 
 export async function POST(request: Request) {
@@ -40,8 +42,8 @@ export async function POST(request: Request) {
             body.phone || "",
             body.location || "",
             body.plan || "",
-            date.toLocaleDateString(),
-            date.toLocaleTimeString(),
+            body.date || "",
+            body.time || "",
           ],
         ],
       },
