@@ -13,6 +13,7 @@ interface IStickyButton {
   type?: "button" | "submit";
   isLoading?: boolean;
   id: string;
+  isAnimated?: boolean;
 }
 
 const StickyButton: React.FC<IStickyButton> = ({
@@ -26,6 +27,7 @@ const StickyButton: React.FC<IStickyButton> = ({
   type,
   isLoading,
   id,
+  isAnimated,
 }) => {
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -53,7 +55,9 @@ const StickyButton: React.FC<IStickyButton> = ({
       style={{
         backgroundColor: bgColor ? `${bgColor}` : "white",
       }}
-      className={`text-${color}  font-bold ${extraClasses} hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 rounded-lg text-sm px-5 py-2.5 text-center ${
+      className={`text-${color} ${
+        isAnimated && "animate-bounce"
+      } font-bold ${extraClasses} hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 rounded-lg text-sm px-5 py-2.5 text-center ${
         isSticky && isVisible && "fixed bottom-2 mx-auto"
       } ${disabled && "opacity-70 cursor-not-allowed"} `}
     >

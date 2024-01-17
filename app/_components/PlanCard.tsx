@@ -108,12 +108,13 @@ const PlanCard: React.FC<IPlanCard> = ({
             </button>
           )}
         </div>
-        <MdKeyboardDoubleArrowDown
+        {/* <MdKeyboardDoubleArrowDown
           size="2rem"
           className="self-center text-white mb-4 animate-bounce"
-        />
+        /> */}
 
         <StickyButton
+          isAnimated
           id={btnId}
           label="Select a Plan"
           color="#22577a"
