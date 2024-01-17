@@ -1,6 +1,27 @@
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
+// Environment variables should be validated and processed once, outside the request handler
+const spreadsheetId = process.env.CLIENT_SPREADSHEET_ID;
+const clientEmail = process.env.CLIENT_EMAIL;
+const privateKey = process.env.CLIENT_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+if (!spreadsheetId || !clientEmail || !privateKey) {
+  throw new Error("Missing environment variables");
+}
+
+// Google Sheets API client initialized outside the request handler
+const sheetsClient = google.sheets({
+  version: "v4",
+  auth: new google.auth.GoogleAuth({
+    credentials: {
+      client_email: clientEmail,
+      private_key: privateKey,
+    },
+    scopes: "https://www.googleapis.com/auth/spreadsheets",
+  }),
+});
+
 type SheetForm = {
   name: string;
   phone: number;
@@ -10,48 +31,33 @@ type SheetForm = {
   time?: string;
 };
 
+async function appendToSheet(data: SheetForm) {
+  const values = [
+    [
+      data.name || "",
+      data.phone || "",
+      data.location || "",
+      data.plan || "",
+      data.date || "",
+      data.time || "",
+    ],
+  ];
+
+  await sheetsClient.spreadsheets.values.append({
+    spreadsheetId,
+    range: "Sheet1!A:F",
+    valueInputOption: "USER_ENTERED",
+    requestBody: { values },
+  });
+}
+
 export async function POST(request: Request) {
-  const body = (await request.json()) as SheetForm;
-  const spreadsheetId = process.env.CLIENT_SPREADSHEET_ID;
-  const date = new Date();
-
   try {
-    const auth = new google.auth.GoogleAuth({
-      projectId: "clearvikalp-landing-page",
-      credentials: {
-        client_email: process.env.CLIENT_EMAIL,
-        private_key: process.env.CLIENT_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      },
-      scopes: "https://www.googleapis.com/auth/spreadsheets",
-    });
-
-    const googleSheetsInstance = google.sheets({
-      version: "v4",
-      auth: auth,
-    });
-
-    const response = await googleSheetsInstance.spreadsheets.values.append({
-      auth,
-      spreadsheetId,
-      range: "Sheet1!A:B",
-      valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: [
-          [
-            body.name || "",
-            body.phone || "",
-            body.location || "",
-            body.plan || "",
-            body.date || "",
-            body.time || "",
-          ],
-        ],
-      },
-    });
-
-    if (response.status === 200)
-      return new NextResponse("success", { status: 200 });
-  } catch (error: any) {
-    return new NextResponse(error, { status: 500 });
+    const body = (await request.json()) as SheetForm;
+    await appendToSheet(body);
+    return new NextResponse("Success", { status: 200 });
+  } catch (error) {
+    console.error("Error:", error);
+    return new NextResponse("Internal Server Error", { status: 500 });
   }
 }

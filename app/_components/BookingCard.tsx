@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { BookModalContext } from "../_context/BookModalContext";
 import StickyButton from "./StickyButton";
@@ -25,15 +25,24 @@ const BookingCard = () => {
     location: "",
   });
 
+  const [isDisable, setIsDisable] = useState(false);
+
   const [errors, setErrors] = React.useState({
     name: "",
     phone: "",
   });
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
+    });
+
+    const error = validateField(name, value);
+    setErrors({
+      ...errors,
+      [name]: error,
     });
   };
 
@@ -41,31 +50,25 @@ const BookingCard = () => {
     setIsBookModal(!isBookModal);
   };
 
-  const validateForm = () => {
-    let isValid = true;
-    const newErrors = { ...errors };
-
-    if (formData.name.trim() === "") {
-      newErrors.name = "Please enter your name";
-      isValid = false;
-    } else {
-      newErrors.name = "";
+  const validateField = (name: any, value: string) => {
+    switch (name) {
+      case "name":
+        return value.trim() === "" ? "Please enter your name" : "";
+      case "phone":
+        return /^\d{10}$/.test(value)
+          ? ""
+          : "Please enter a valid 10-digit mobile number";
+      case "location":
+        return "";
+      default:
+        return "";
     }
-
-    if (!/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = "Please enter a valid 10-digit mobile number";
-      isValid = false;
-    } else {
-      newErrors.phone = "";
-    }
-
-    setErrors(newErrors);
-    return isValid;
   };
 
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (validateForm()) {
+    setIsDisable(true);
+    if (errors.name === "" && errors.phone === "") {
       (window as unknown as CustomWindow).dataLayer.push({
         event: "booking_card_submit",
         card_type: isBookModal ? "popup_card" : "top-card",
@@ -88,6 +91,9 @@ const BookingCard = () => {
         })
         .catch((err) => {
           console.log(err);
+        })
+        .finally(() => {
+          setIsDisable(false);
         });
     }
   };
@@ -180,6 +186,7 @@ const BookingCard = () => {
             color="white"
             extraClasses="w-full sm:w-[50%] lg:w-[35%] sm:self-center mt-3"
             type="submit"
+            disabled={isDisable}
             // isLoading={isLoading}
           />
         </form>

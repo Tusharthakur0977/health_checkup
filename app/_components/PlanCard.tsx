@@ -95,10 +95,7 @@ const PlanCard: React.FC<IPlanCard> = ({
           Includes {noOfTest}+ Tests
         </p>
 
-        <ul
-          role="list"
-          className="mb-4 flex-1 text-left grid gap-4 grid-cols-2"
-        >
+        <ul role="list" className="mb-4 flex-1 text-left grid grid-cols-2">
           {renderTests}
         </ul>
         <div className="min-h-[55px]">
