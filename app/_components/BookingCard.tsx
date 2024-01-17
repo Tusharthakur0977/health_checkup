@@ -78,7 +78,7 @@ const BookingCard = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
-          location: formData.location,
+          // location: formData.location,
           plan: selectedPLan,
           date: date.toLocaleDateString(),
           time: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
@@ -169,14 +169,14 @@ const BookingCard = () => {
                 {errors.phone}
               </p>
             )}
-            <input
+            {/* <input
               type="text"
               className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-md text-sm sm:text-base  px-4 py-2 sm:py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
               placeholder="Your Location"
               aria-label="Your Location"
               name="location"
               onChange={handleChange}
-            />
+            /> */}
           </div>
 
           <StickyButton

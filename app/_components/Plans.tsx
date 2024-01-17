@@ -56,7 +56,7 @@ const Plans = () => {
           arrows
           prevArrow={<FaCircleArrowLeft color="#22577a" size="2rem" />}
           nextArrow={<FaCircleArrowRight color="#22577a" size="2rem" />}
-          initialSlide={1}
+          initialSlide={0}
           onSwipe={handleSwipe}
           className="w-[90%] self-center m-0 overflow-visible"
           {...settings}
