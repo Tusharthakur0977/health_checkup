@@ -1,5 +1,4 @@
 import { GoogleTagManager } from "@next/third-parties/google";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -9,11 +8,6 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 const GTM_ID = "GTM-WPWDT5RS";
 
-export const metadata: Metadata = {
-  title: "Clear Vikalp",
-  description: "",
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +16,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <script
           async
           src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -30,11 +23,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
         <title>Clear Vikalp</title>
+        <meta title="Clear Vikalp" />
       </head>
-      <body suppressHydrationWarning={true}>
-        <BookModalProvider>{children}</BookModalProvider>
+      <body>
+        <BookModalProvider>
+          {children}
+          <GoogleTagManager gtmId={GTM_ID} />
+        </BookModalProvider>
       </body>
-      <GoogleTagManager gtmId={GTM_ID} />
     </html>
   );
 }

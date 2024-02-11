@@ -25,7 +25,7 @@ const sheetsClient = google.sheets({
 type SheetForm = {
   name: string;
   phone: number;
-  // location?: string;
+  location?: string;
   plan?: string;
   date?: string;
   time?: string;
@@ -36,7 +36,7 @@ async function appendToSheet(data: SheetForm) {
     [
       data.name || "",
       data.phone || "",
-      // data.location || "",
+      data.location || "",
       data.plan || "",
       data.date || "",
       data.time || "",

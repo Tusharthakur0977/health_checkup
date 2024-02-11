@@ -4,15 +4,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "<YOUR SITE URL>.com",
+        hostname: "https://www.clearvikalp.in",
         port: "",
         pathname: "/images/**",
       },
     ],
   },
-  compiler:{
-    styledComponents: true
-  }
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 module.exports = nextConfig;
