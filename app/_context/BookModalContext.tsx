@@ -9,6 +9,8 @@ interface IBookModalContext {
   setIsFormFilled: (isFormFilled: boolean) => void;
   selectedPLan: string;
   setSelectedPLan: (selectedPLan: string) => void;
+  parameters: any;
+  setParameters: (parameters: any) => void;
 }
 
 interface IBookMdalProvider {
@@ -22,12 +24,15 @@ export const BookModalContext = React.createContext<IBookModalContext>({
   setIsFormFilled: () => {},
   selectedPLan: "",
   setSelectedPLan: () => {},
+  parameters: {},
+  setParameters: () => {},
 });
 
 const BookModalProvider = (props: IBookMdalProvider) => {
   const [isBookModal, setIsBookModal] = React.useState<boolean>(false);
   const [isFormFilled, setIsFormFilled] = React.useState(false);
   const [selectedPLan, setSelectedPLan] = React.useState("");
+  const [parameters, setParameters] = React.useState({});
   return (
     <BookModalContext.Provider
       value={{
@@ -37,6 +42,8 @@ const BookModalProvider = (props: IBookMdalProvider) => {
         setIsFormFilled,
         selectedPLan,
         setSelectedPLan,
+        parameters,
+        setParameters,
       }}
     >
       {props.children}

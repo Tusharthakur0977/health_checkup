@@ -29,6 +29,7 @@ type SheetForm = {
   plan?: string;
   date?: string;
   time?: string;
+  parameters: any;
 };
 
 async function appendToSheet(data: SheetForm) {
@@ -40,12 +41,13 @@ async function appendToSheet(data: SheetForm) {
       data.plan || "",
       data.date || "",
       data.time || "",
+      data.parameters || {},
     ],
   ];
 
   await sheetsClient.spreadsheets.values.append({
     spreadsheetId,
-    range: "Sheet1!A:F",
+    range: "Sheet1!A:G",
     valueInputOption: "USER_ENTERED",
     requestBody: { values },
   });

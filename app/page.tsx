@@ -1,20 +1,52 @@
 "use client";
 
-import React from "react";
+import { useSearchParams } from "next/navigation";
+import React, { useContext, useEffect } from "react";
+import Accreditation from "./_components/Accreditation";
 import BookingCard from "./_components/BookingCard";
 import FAQ from "./_components/FAQ";
 import Hero from "./_components/Hero";
 import BookTestModal from "./_components/Modals/BookTestModal";
 import Plans from "./_components/Plans";
+import StepsJourney from "./_components/StepsJourney";
 import StickyButton from "./_components/StickyButton";
 import TopHeader from "./_components/TopHeader";
-import { BookModalContext } from "./_context/BookModalContext";
-import StepsJourney from "./_components/StepsJourney";
 import WhoWants from "./_components/WhoWants";
-import Accreditation from "./_components/Accreditation";
+import { BookModalContext } from "./_context/BookModalContext";
+
+const paramNames = [
+  "campaignid",
+  "adgroupid",
+  "targetid",
+  "matchtype",
+  "network",
+  "device",
+  "gclid",
+  "creative",
+  "keyword",
+  "placement",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_content",
+];
 
 export default function Home() {
-  const { isBookModal, setIsBookModal } = React.useContext(BookModalContext);
+  const { isBookModal, setIsBookModal, setParameters } =
+    useContext(BookModalContext);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const params = paramNames.reduce((acc, paramName) => {
+      const paramValue = searchParams.get(paramName);
+      if (paramValue) acc[paramName] = paramValue;
+      return acc;
+    }, {});
+
+    console.log(params);
+    setParameters(params);
+    
+  }, [searchParams]);
 
   return (
     <main className="flex flex-col justify-center items-center pb-10 bg-[#f1ede8]">

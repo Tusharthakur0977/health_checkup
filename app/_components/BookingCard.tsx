@@ -17,6 +17,7 @@ const BookingCard = () => {
     isFormFilled,
     setIsFormFilled,
     selectedPLan,
+    parameters,
   } = React.useContext(BookModalContext);
   const date = new Date();
   const [formData, setFormData] = React.useState({
@@ -82,6 +83,7 @@ const BookingCard = () => {
           plan: selectedPLan || "",
           date: date.toLocaleDateString(),
           time: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
+          parameters,
         }),
       })
         .then((res) => {
