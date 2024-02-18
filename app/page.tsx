@@ -37,15 +37,16 @@ export default function Home() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const params = paramNames.reduce((acc, paramName) => {
-      const paramValue = searchParams.get(paramName);
-      if (paramValue) acc[paramName] = paramValue;
-      return acc;
-    }, {});
+    const params = paramNames.reduce(
+      (acc: Record<string, string>, paramName) => {
+        const paramValue = searchParams.get(paramName);
+        if (paramValue) acc[paramName] = paramValue;
+        return acc;
+      },
+      {}
+    );
 
-    console.log(params);
     setParameters(params);
-    
   }, [searchParams]);
 
   return (
