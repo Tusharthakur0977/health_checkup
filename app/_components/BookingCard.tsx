@@ -83,7 +83,7 @@ const BookingCard = () => {
           plan: selectedPLan || "",
           date: date.toLocaleDateString(),
           time: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
-          parameters,
+          parameters: parameters,
         }),
       })
         .then((res) => {
