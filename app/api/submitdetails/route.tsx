@@ -47,7 +47,7 @@ async function appendToSheet(data: SheetForm) {
 
   await sheetsClient.spreadsheets.values.append({
     spreadsheetId,
-    range: "Sheet1!A:G",
+    range: "Sheet1!A:F",
     valueInputOption: "USER_ENTERED",
     requestBody: { values },
   });
