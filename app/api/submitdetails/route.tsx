@@ -42,10 +42,10 @@ async function appendToSheet(data: SheetForm) {
       data.date || "",
       data.time || "",
       "",
-      data.parameters.campaignid || "a",
-      data.parameters.utm_source || "v",
-      data.parameters.utm_medium || "b",
-      data.parameters.utm_campaign || "s",
+      data.parameters.campaignid || "",
+      data.parameters.utm_source || "",
+      data.parameters.utm_medium || "",
+      data.parameters.utm_campaign || "",
       data.parameters.utm_content || "",
       // data.parameters.adgroupid || "",
       // data.parameters.targetid || "",
@@ -61,7 +61,7 @@ async function appendToSheet(data: SheetForm) {
 
   await sheetsClient.spreadsheets.values.append({
     spreadsheetId,
-    range: "Sheet3!A:G",
+    range: "Sheet1!A:G",
     valueInputOption: "USER_ENTERED",
     requestBody: { values },
   });
