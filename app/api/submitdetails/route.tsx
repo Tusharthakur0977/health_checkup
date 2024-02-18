@@ -41,7 +41,7 @@ async function appendToSheet(data: SheetForm) {
       data.plan || "",
       data.date || "",
       data.time || "",
-      data.parameters || {},
+      JSON.stringify(data.parameters) || "",
     ],
   ];
 
