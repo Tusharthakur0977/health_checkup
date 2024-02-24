@@ -23,7 +23,6 @@ const BookingCard = () => {
   const [formData, setFormData] = React.useState({
     name: "",
     phone: "",
-    location: "",
   });
 
   const [isDisable, setIsDisable] = useState(false);
@@ -35,16 +34,17 @@ const BookingCard = () => {
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
 
+    // Fixed the validation logic here
     const error = validateField(name, value);
-    setErrors({
-      ...errors,
+    setErrors((prev) => ({
+      ...prev,
       [name]: error,
-    });
+    }));
   };
 
   const handleOpen = () => {
@@ -59,8 +59,6 @@ const BookingCard = () => {
         return /^\d{10}$/.test(value)
           ? ""
           : "Please enter a valid 10-digit mobile number";
-      case "location":
-        return "";
       default:
         return "";
     }
@@ -68,6 +66,14 @@ const BookingCard = () => {
 
   const onSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
+    if (formData.name === "" && formData.phone === "") {
+      setErrors({
+        name: "Please enter your name",
+        phone: "Please enter your Phone Number",
+      });
+      return;
+    }
     setIsDisable(true);
     if (errors.name === "" && errors.phone === "") {
       (window as unknown as CustomWindow).dataLayer.push({
@@ -79,7 +85,6 @@ const BookingCard = () => {
         body: JSON.stringify({
           name: formData.name,
           phone: formData.phone,
-          location: formData.location || "",
           plan: selectedPLan || "",
           date: date.toLocaleDateString(),
           time: date.toLocaleDateString() + " " + date.toLocaleTimeString(),
@@ -143,40 +148,36 @@ const BookingCard = () => {
       ) : (
         <form className="flex flex-col gap-2 sm:px-6" onSubmit={onSubmit}>
           <div className="flex flex-col md:flex-row">
-            <input
-              type="text"
-              className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-md text-sm sm:text-base  px-4 py-2 sm:py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
-              placeholder="Your Name"
-              value={formData.name}
-              name="name"
-              onChange={handleChange}
-            />
-            {errors.name && (
-              <p className="text-red-500 font-semibold text-sm pb-2">
-                {errors.name}
-              </p>
-            )}
-            <input
-              type="number"
-              className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-md text-sm sm:text-base px-4 py-2 sm:py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
-              placeholder="Your Mobile Number"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-            />
-            {errors.phone && (
-              <p className="text-red-500 font-semibold text-sm pb-2">
-                {errors.phone}
-              </p>
-            )}
-            {/* <input
-              type="text"
-              className="form-input w-full appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-md text-sm sm:text-base  px-4 py-2 sm:py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
-              placeholder="Your Location"
-              aria-label="Your Location"
-              name="location"
-              onChange={handleChange}
-            /> */}
+            <div className="flex flex-col gap-1 sm:gap-2 w-full">
+              <input
+                type="text"
+                className="form-input appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-md text-sm sm:text-base  px-4 py-2 sm:py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
+                placeholder="Your Name"
+                value={formData.name}
+                name="name"
+                onChange={handleChange}
+              />
+              {errors.name && (
+                <p className="text-red-500 font-semibold text-sm pb-2">
+                  {errors.name}
+                </p>
+              )}
+            </div>
+            <div className="flex flex-col gap-1 sm:gap-2 w-full">
+              <input
+                type="number"
+                className="form-input  appearance-none bg-white border border-gray-700 focus:border-gray-600 rounded-md text-sm sm:text-base px-4 py-2 sm:py-3 mb-2 sm:mb-0 sm:mr-2 text-black placeholder-gray-500"
+                placeholder="Your Mobile Number"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              {errors.phone && (
+                <p className="text-red-500 font-semibold text-sm">
+                  {errors.phone}
+                </p>
+              )}
+            </div>
           </div>
 
           <StickyButton
@@ -187,7 +188,6 @@ const BookingCard = () => {
             extraClasses="w-full sm:w-[50%] lg:w-[35%] sm:self-center mt-3"
             type="submit"
             disabled={isDisable}
-            // isLoading={isLoading}
           />
         </form>
       )}

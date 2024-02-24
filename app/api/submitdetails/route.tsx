@@ -25,7 +25,6 @@ const sheetsClient = google.sheets({
 type SheetForm = {
   name: string;
   phone: number;
-  location?: string;
   plan?: string;
   date?: string;
   time?: string;
@@ -33,11 +32,11 @@ type SheetForm = {
 };
 
 async function appendToSheet(data: SheetForm) {
-  const values = [
+  const rowsToInsert = [
     [
       data.name || "",
       data.phone || "",
-      data.location || "",
+      "",
       data.plan || "",
       data.date || "",
       data.time || "",
@@ -47,30 +46,49 @@ async function appendToSheet(data: SheetForm) {
       data.parameters.utm_medium || "",
       data.parameters.utm_campaign || "",
       data.parameters.utm_content || "",
-      // data.parameters.adgroupid || "",
-      // data.parameters.targetid || "",
-      // data.parameters.matchtype || "",
-      // data.parameters.network || "",
-      // data.parameters.device || "",
-      // data.parameters.gclid || "",
-      // data.parameters.creative || "",
-      // data.parameters.keyword || "",
-      // data.parameters.placement || "",
+      data.parameters.adgroupid || "",
+      data.parameters.targetid || "",
+      data.parameters.matchtype || "",
+      data.parameters.network || "",
+      data.parameters.gclid || "",
+      data.parameters.creative || "",
+      data.parameters.keyword || "",
+      data.parameters.placement || "",
     ],
   ];
 
-  await sheetsClient.spreadsheets.values.append({
-    spreadsheetId,
-    range: "Sheet1!A:G",
-    valueInputOption: "USER_ENTERED",
-    requestBody: { values },
+  const getResponse = await sheetsClient.spreadsheets.values.get({
+    spreadsheetId: spreadsheetId,
+    range: "Sheet1!A:Z",
   });
+
+  const nextRow = getResponse.data.values
+    ? getResponse.data.values.length + 1
+    : 1;
+
+  const updateRange = `Sheet1!A${nextRow}`;
+
+  const updateRequest = {
+    spreadsheetId: spreadsheetId,
+    range: updateRange,
+    valueInputOption: "USER_ENTERED",
+    includeValuesInResponse: true,
+    resource: {
+      values: rowsToInsert,
+    },
+  };
+
+  const updateResponse = await sheetsClient.spreadsheets.values.update(
+    updateRequest
+  );
+  return updateResponse;
 }
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as SheetForm;
     await appendToSheet(body);
+
     return new NextResponse("Success", { status: 200 });
   } catch (error) {
     console.error("Error:", error);
