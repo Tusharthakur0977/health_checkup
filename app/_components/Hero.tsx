@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Image from 'next/image';
 import { IoCall } from 'react-icons/io5';
@@ -42,13 +42,16 @@ const Hero = () => {
       </p>
       <div className='w-full overflow-hidden py-3 sm:px-0  '>
         <Image
-          src={
-            width! < 600
-              ? '/images/banner/creative.jpg'
-              : '/images/banner/desktop-banner.jpg'
-          }
-          width={width! < 600 ? 1141 : 1600}
-          height={width! < 600 ? 700 : 500}
+          src={'/images/banner/creative.jpg'}
+          // src={
+          //   width! < 600
+          //     ? '/images/banner/creative.jpg'
+          //     : '/images/banner/desktop-banner.jpg'
+          // }
+          // width={width! < 600 ? 1141 : 1600}
+          // height={width! < 600 ? 700 : 500}
+          width={1141}
+          height={ 700}
           alt=''
           quality={75}
         />
